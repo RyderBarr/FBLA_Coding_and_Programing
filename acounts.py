@@ -85,25 +85,31 @@ class acount_class:
     # the user will input a date V
     def daily_summaries(income,expense,date):
         large_income = 1000
-        small_income = 0
+       
         num_large_income = income.count(large_income)
-        num_small_income = income.cont(0-999)
+        num_small_income = income.count() - income.count(large_income)
+
         income_num = income.index()
 
-
-        summary = """"""
+        summary = """ daily summary
+        there were """ + str(num_large_income) + """ large incomes
+        there were """ +
         return summary
     
     # user will input a inital date(i_date)
     # user will input a final date(f_date) V
     def weekly_summaries(income,expense, i_date, f_date):
-        summary = ""
+        summary = """ weekly summary
+
+
+"""
         return summary
     
     # user will input a inital date(i_date)
     # user will input a final date(f_date) V
     def monthly_summaries(income,expense, i_date, f_date):
-        summary = """
+        summary = """ monthly summary
+
 
 """
         return summary
@@ -111,5 +117,8 @@ class acount_class:
     # user will input a inital date(i_date)
     # user will input a final date(f_date) V
     def yearly_summaries(income,expense, i_date, f_date):
-        summary = ""
+        summary = """ yearly summary
+
+
+"""
         return summary
