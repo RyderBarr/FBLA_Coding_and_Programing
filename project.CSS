@@ -1,0 +1,67 @@
+
+.container{
+    /* border: solid black; */
+    display: grid;
+    
+    grid-template-rows: repeat(8, auto);
+    grid-template-columns: repeat(8, 12.5%) ;
+    gap: 2px;
+    grid-template-areas: 
+    ". header header header header header header ."
+    "navbar navbar navbar navbar navbar navbar navbar navbar" 
+    "main main main main main main main aside" 
+    "main main main main main main main aside" 
+    "article article article2 article2 article2 article3 article3 aside"
+    "article article article2 article2 article2 article3 article3 aside"
+    "article article article2 article2 article2 article3 article3 aside"  
+    ". footer footer footer footer footer footer ."
+    ". footer footer footer footer footer footer ."
+    ;
+}
+.box{
+    border: 3px double black; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+/* .container > div{
+    
+    border: 3px double black;
+    margin-top: 0px;
+    padding-top: 0px;
+} */
+.item-1{
+    grid-area: header;
+    border-color: red;
+    color: blue;
+    background-color: white;
+    animation-name: rgbloop;
+    animation-duration: 4s;
+}
+@keyframes example{
+from{color:blue}
+to {color: red;}
+
+}
+.item-2{
+    grid-area: main;
+}
+.item-3{
+    grid-area: footer;
+}
+.item-4{
+    grid-area: navbar;
+    
+}
+.item-5{
+    grid-area: article;
+}
+.item-6{
+    grid-area: article2;
+}
+.item-7{
+    grid-area: article3;
+}
+.item-8{
+    grid-area: aside;
+}
