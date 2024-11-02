@@ -8,9 +8,14 @@ class Account
     // balance variable
     balance = 0;
 
-    // constructing the account
-    // includes first name, last name, phone number, email address, and balance
-    constructor ( fName = "" , lName = "" , phone = "" , email = "" , balance = 0 ){
+    //incomelist
+    incomeList = [];
+
+    //expenselist
+    expenseList = [];
+
+    // constructing the account includes first name, last name, phone number, email address, and balance
+    constructor ( fName , lName , phone , email , balance ){
 
         this.name = fName + " " + lName;
         this.firstName = fName;
@@ -34,7 +39,7 @@ class Account
     }
 
     // set up the login information for the acount
-    createLogin ( uName = "" , pWord = "" )
+    createLogin ( uName , pWord )
     {
 
         this.username = uName;
@@ -43,7 +48,7 @@ class Account
     }
 
     // adds an expense to the users account
-    expense ( amount = 0 , record = true , date = "", eName = "")
+    expense ( amount , record , date , eName )
     {
 
         negitveOne:if ( amount < 0 ) amount * -1
@@ -69,50 +74,53 @@ class Account
         {
 
             //expenseList will contain "no details", the date and the amount * -1
-            let expenseList = ["no details", date, amount * -1];
+            this.expenseList[0] = "no details";
+            this.expenseList[1] = date;
+            this.expenseList[2] = " + ";
+            this.expenseList[3] = amount;
 
             // if the amount is less then ten catigorize as a tiny expense 
             amountCheck:switch(true){
 
                 // if amount is less then 10 then add "tiny" expense" to expenseList then break out of the switch
                 case amount < 10:
-                    expenseList = [expenseList + "tiny expense"];
+                    this.expenseList = [this.expenseList + "tiny expense"];
                     break;
 
                 // if amount is less then 30 then add "small expense" to expenseList then break out of the switch
                 case amount < 30:
-                    expenseList = [expenseList + "small expense"];
+                    this.expenseList = [this.expenseList + "small expense"];
                     break;
 
                 // if amount is less then 60 then add :normal expense" to expenseList then break out of the switch
                 case amount < 60:
-                    expenseList = [expenseList + "normal expense"];
+                    this.expenseList = [this.expenseList + "normal expense"];
                     break;
 
                 // if amount is less then 100 then add "big expense" to expenseList then break out of the switch
                 case amount < 100:
-                    expenseList = [expenseList + "big expense"];
+                    this.expenseList = [this.expenseList + "big expense"];
                     break;
 
                 // if amount is less then 500 then add "large expense" to expenseList then break out of the switch
                 case amount < 500:
-                    expenseList = [expenseList + "large expense"];
+                    this.expenseList = [this.expenseList + "large expense"];
                     break;
 
                 // if it reaches here add "huge expense" to expenseList
                 default:
-                    expenseList = [expenseList + "huge expense"];    
+                    this.expenseList = [this.expenseList + "huge expense"];    
             }
 
             //changes and expenseList are added to changes list
-            this.changes = [changes, `${eName} : ${expenseList}`];
+            this.changes = [changes, `${eName} : ${this.expenseList}`];
 
         }
 
     }
 
     //same as the expense above but includes a details string 
-    expense ( amount = 0 , details = "", record = true , date = "", eName = "")
+    expense ( amount , details , record , date , eName )
     {
 
         // fills in the info from the expense above
@@ -123,49 +131,52 @@ class Account
         {
 
             //expenseList will contain "no details", the date and the amount * -1
-            let expenseList = [details, date, amount * -1]
+            this.expenseList[0] = details;
+            this.expenseList[1] = date;
+            this.expenseList[2] = " + ";
+            this.expenseList[3] = amount;
 
             amountCheck:switch(true){
 
                 // if amount is less then 10 then add "tiny" expense" to expenseList then break out of the switch
                 case amount < 10:
-                    expenseList = [expenseList + "tiny expense"];
+                    this.expenseList = [this.expenseList + "tiny expense"];
                     break;
 
                 // if amount is less then 30 then add "small expense" to expenseList then break out of the switch
                 case amount < 30:
-                    expenseList = [expenseList + "small expense"];
+                    this.expenseList = [this.expenseList + "small expense"];
                     break;
 
                 // if amount is less then 60 then add :normal expense" to expenseList then break out of the switch
                 case amount < 60:
-                    expenseList = [expenseList + "normal expense"];
+                    this.expenseList = [this.expenseList + "normal expense"];
                     break;
 
                 // if amount is less then 100 then add "big expense" to expenseList then break out of the switch
                 case amount < 100:
-                    expenseList = [expenseList + "big expense"];
+                    this.expenseList = [this.expenseList + "big expense"];
                     break;
 
                 // if amount is less then 500 then add "large expense" to expenseList then break out of the switch
                 case amount < 500:
-                    expenseList = [expenseList + "large expense"];
+                    this.expenseList = [this.expenseList + "large expense"];
                     break;
 
                 // if it reaches here add "huge expense" to expenseList
                 default:
-                    expenseList = [expenseList + "huge expense"];    
+                    this.expenseList = [this.expenseList + "huge expense"];    
             }
 
             //changes and expenseList are added to changes list
-            this.changes = [changes, `${eName} : ${expenseList}`];
+            this.changes = [changes, `${eName} : ${this.expenseList}`];
 
         }
 
     }
     
     // adds an income to the users account
-    income ( amount = 0 , record = true , date = "", eName = "")
+    income ( amount , record , date , eName )
     {
 
         negitveOne:if ( amount < 0 ) amount * -1
@@ -191,49 +202,52 @@ class Account
         {
 
             //incomeList will contain "no details", the date, +, and the amount 
-            let incomeList = ["no details", date, " +" , amount]
+            this.incomeList[0] = "no details";
+            this.incomeList[1] = date;
+            this.incomeList[2] = " + ";
+            this.incomeList[3] = amount;
 
             amountCheck:switch(true){
 
                 // if amount is less then 10 then add "tiny" income" to incomeList then break out of the switch
                 case amount < 10:
-                    incomeList = [incomeList + "tiny income"];
+                    this.incomeList = [this.incomeList + "tiny income"];
                     break;
 
                 // if amount is less then 30 then add "small income" to incomeList then break out of the switch
                 case amount < 30:
-                    incomeList = [incomeList + "small income"];
+                    this.incomeList = [this.incomeList + "small income"];
                     break;
 
                 // if amount is less then 60 then add :normal income" to incomeList then break out of the switch
                 case amount < 60:
-                    incomeList = [incomeList + "normal income"];
+                    this.incomeList = [this.incomeList + "normal income"];
                     break;
 
                 // if amount is less then 100 then add "big income" to incomeList then break out of the switch
                 case amount < 100:
-                    incomeList = [incomeList + "big income"];
+                    this.incomeList = [this.incomeList + "big income"];
                     break;
 
                 // if amount is less then 500 then add "large income" to incomeList then break out of the switch
                 case amount < 500:
-                    incomeList = [incomeList + "large income"];
+                    this.incomeList = [this.incomeList + "large income"];
                     break;
 
                 // if it reaches here add "huge income" to incomeList
                 default:
-                    incomeList = [incomeList + "huge income"];    
+                    this.incomeList = [this.incomeList + "huge income"];    
             }
             
             //changes and incomeList are added to changes list
-            this.changes = [changes, `${eName} : ${incomeList}`];
+            this.changes = [changes, `${eName} : ${this.incomeList}`];
 
         }
 
     }
 
     //same as the income above but includes a details string 
-    income ( amount = 0 , details = "", record = true , date = "", eName = "")
+    income ( amount , details , record , date , eName )
     {
 
         // fills in the info from the income above
@@ -244,42 +258,45 @@ class Account
         {
 
             //incomeList will contain "no details", the date, +, and the amount
-            let incomeList = [details, date, " +" , amount]
+            this.incomeList[0] = details;
+            this.incomeList[1] = date;
+            this.incomeList[2] = " + ";
+            this.incomeList[3] = amount;
 
             amountCheck:switch(true){
 
                 // if amount is less then 10 then add "tiny" income" to incomeList then break out of the switch
                 case amount < 10:
-                    incomeList = [incomeList + "tiny income"];
+                    this.incomeList = [this.incomeList + "tiny income"];
                     break;
 
                 // if amount is less then 30 then add "small income" to incomeList then break out of the switch
                 case amount < 30:
-                    incomeList = [incomeList + "small income"];
+                    this.incomeList = [this.incomeList + "small income"];
                     break;
 
                 // if amount is less then 60 then add :normal income" to incomeList then break out of the switch
                 case amount < 60:
-                    incomeList = [incomeList + "normal income"];
+                    this.incomeList = [this.incomeList + "normal income"];
                     break;
 
                 // if amount is less then 100 then add "big income" to incomeList then break out of the switch
                 case amount < 100:
-                    incomeList = [incomeList + "big income"];
+                    this.incomeList = [this.incomeList + "big income"];
                     break;
 
                 // if amount is less then 500 then add "large income" to incomeList then break out of the switch
                 case amount < 500:
-                    incomeList = [incomeList + "large income"];
+                    this.incomeList = [this.incomeList + "large income"];
                     break;
 
                 // if it reaches here add "huge income" to incomeList
                 default:
-                    incomeList = [incomeList + "huge income"];    
+                    this.incomeList = [this.incomeList + "huge income"];    
             }
 
             //changes and incomeList are added to changes list
-            this.changes = [changes, `${eName} : ${incomeList}`];
+            this.changes = [this.changes, `${eName} : ${this.incomeList}`];
 
         }
 
@@ -289,22 +306,22 @@ class Account
         return this.balance;
     }
 
-    deleteChange( i = 0 ){
+    deleteChange( i ){
 
         delete this.changes[ i + 1 ];
 
     }
 
-    deleteChange( eName = "" ){
+    incomeDeleteChange( eName ){
 
-        for ( let i of changes )
+        Deletefor:for ( let i of changes )
             {
     
-                if (i.includes(eName))
+                setDelete:if (i.includes(eName))
                 {
 
                     delete this.changes[ i + 1 ];
-
+                    
                 }
     
             }
@@ -312,13 +329,58 @@ class Account
 
     }
 
-    updateChange( eName = "" , amount = 0 , nEName = "" , date = "" ){
+    incomeUpdateChange( eName , amount , nEName , date ){
 
-        for ( let i of changes )
+        updateFor:for ( let i of changes )
         {
 
-            if (i.includes(eName))
+            setUpdate:if (i.includes(eName))
             {
+
+                this.incomeList[0] = "no details";
+                this.incomeList[1] = date;
+                this.incomeList[2] = " + ";
+                this.incomeList[3] = amount;
+
+                this.changes = [this.changes, `${nEName} : ${this.incomeList}`];
+
+            }
+
+        }
+
+    }
+
+    expenseDeleteChange( eName ){
+
+        Deletefor:for ( let i of changes )
+            {
+    
+                setDelete:if (i.includes(eName))
+                {
+
+                    delete this.changes[ i + 1 ];
+                    
+                }
+    
+            }
+        
+
+    }
+
+    expenseUpdateChange( eName , amount , nEName , date ){
+
+        updateFor:for ( let i of changes )
+        {
+
+            setUpdate:if (i.includes(eName))
+            {
+
+                this.expenseList[0] = "no details";
+                this.expenseList[1] = date;
+                this.expenseList[2] = " + ";
+                this.expenseList[3] = amount;
+
+                this.changes = [this.changes, `${nEName} : ${this.expenseList}`];
 
             }
 
