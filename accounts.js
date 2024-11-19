@@ -38,6 +38,18 @@ class Account
 
     }
 
+    get getFName(){
+        return this.fName;
+    }
+    set setFName( fName ){
+        this.fName;
+    }
+    get lName(){
+        return this.lName;
+    }
+    get phone(){
+        return this.phone;
+    }
     // set up the login information for the acount
     createLogin ( uName , pWord )
     {
@@ -389,3 +401,11 @@ class Account
     }
 
 }
+
+
+// test area
+
+const Acc = new Account("ryder","barr","999-999-9999","ryderbarr2008@gmail.com",200);
+console.log(Acc.getFName());
+
+// test area
