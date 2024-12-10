@@ -171,7 +171,7 @@ class Account
 
             }
 
-    // adds an expense to the users account
+    // adds an expense to the users account --- convert to json
         expense ( amount = 0 , details = "" , record = false , date = "" , eName = "" )
         {
 
@@ -243,7 +243,7 @@ class Account
 
         }
     
-    // adds an income to the users account
+    // adds an income to the users account --- convert to json
         income ( amount = 0 , details = "", record = false , date = "" , eName = "" )
         {
 
@@ -316,7 +316,7 @@ class Account
         }
 
 
-    // i is the index number of the change that the user wants to delete --- tested
+    // i is the index number of the change that the user wants to delete --- tested --- convert to json
         deleteChange( i = 0 ){
             
             if( i > -1 )
@@ -341,6 +341,7 @@ class Account
                 {
     
                     // if the change that the loop is on, has the name inputed in is on the change 
+                    // when using json try if(json[i].name == ename) 
                         setDelete:if ( i.includes( eName = "" ) )
                         {
 
