@@ -329,7 +329,11 @@ class Account
 
         }
 
-    // this is the same as deleteChange but it is by name
+    // this is the same as deleteChange but it is by name --- this is what i am working on
+    // this is the same as deleteChange but it is by name --- this is what i am working on
+    // this is the same as deleteChange but it is by name --- this is what i am working on
+    // this is the same as deleteChange but it is by name --- this is what i am working on
+    // this is the same as deleteChange but it is by name --- this is what i am working on
         incomeDeleteChange( eName = "" ){
 
             // this is for loop to look through the changes
