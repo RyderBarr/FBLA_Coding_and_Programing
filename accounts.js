@@ -17,6 +17,11 @@ class Account
     // constructing the account includes first name, last name, phone number, email address, and balance --- tested
         constructor ( fName = "" , lName = "" , phone = "" , email = "" , balance = 0, username = "", password = "" )
         {
+            newUser = "{ ";
+            newUser += "\"username\":" + username;
+            newUser += ", "
+            newUser += "\"password\":" + username;
+            newUser += ", "
 
             this.fName = fName;
             this.lName = lName;
@@ -46,7 +51,7 @@ class Account
             this.password = password;
 
             this.username = username;
-
+                    
         }
 
     // get and sets --- tested
