@@ -1,4 +1,4 @@
-fetch('users').then().then().catch();
+var users = fetch('acountData.json');
 
 class Account
 {
