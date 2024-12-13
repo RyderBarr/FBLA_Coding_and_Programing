@@ -1,6 +1,8 @@
+fetch('users').then().then().catch();
 
 class Account
 {
+
 
     // variable for expences and incomes 
         changes = [];
@@ -17,11 +19,23 @@ class Account
     // constructing the account includes first name, last name, phone number, email address, and balance --- tested
         constructor ( fName = "" , lName = "" , phone = "" , email = "" , balance = 0, username = "", password = "" )
         {
-            newUser = "{ ";
+            let newUser = "{ ";
             newUser += "\"username\":" + username;
             newUser += ", "
-            newUser += "\"password\":" + username;
+            newUser += "\"password\":" + password;
             newUser += ", "
+            newUser += "\"phone\":" + phone;
+            newUser += ", "
+            newUser += "\"email\":" + email;
+            newUser += ", "
+            newUser += "\"balance\":" + balance;
+            newUser += ", "
+            newUser += "\"fName\":" + fName;
+            newUser += ", "
+            newUser += "\"lName\":" + lName;
+            newUser += "} "
+            
+            
 
             this.fName = fName;
             this.lName = lName;
