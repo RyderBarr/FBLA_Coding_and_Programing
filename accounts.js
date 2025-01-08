@@ -1,4 +1,26 @@
-var users = fetch('acountData.json');
+//
+
+const fs = require('fs')
+
+function read(database = 'UserDataBase.json'){
+    // read JSON object from file
+    const data = fs.readFileSync(database, 'utf8')
+    return JSON.parse(data)
+}
+
+function write(obj,database = 'UserDataBase.json') {
+    if(!obj) return console.log('please provide data to save')
+    try{
+        fs.writeFileSync(database,JSON.stringify(obj)) // overwrites current data
+        return console.log("sucess")
+    } catch (err) {
+        return console.log("failed")
+    }
+}
+
+module.exports = { read, write }
+
+//
 
 class Account
 {
@@ -17,28 +39,21 @@ class Account
         expenseList = [];
 
     // constructing the account includes first name, last name, phone number, email address, and balance --- tested
-        constructor ( fName = "" , lName = "" , phone = "" , email = "" , balance = 0, username = "", password = "" )
+        constructor ( phone = "" , email = "" , balance = 0, username = "", password = "", index = 0 )
         {
-            let newUser = "{ ";
-            newUser += "\"username\":" + username;
-            newUser += ", "
-            newUser += "\"password\":" + password;
-            newUser += ", "
-            newUser += "\"phone\":" + phone;
-            newUser += ", "
-            newUser += "\"email\":" + email;
-            newUser += ", "
-            newUser += "\"balance\":" + balance;
-            newUser += ", "
-            newUser += "\"fName\":" + fName;
-            newUser += ", "
-            newUser += "\"lName\":" + lName;
-            newUser += "} "
-            
-            
-
-            this.fName = fName;
-            this.lName = lName;
+            // let newUser = " { ";
+            // newUser += "\"index\":" + index;
+            // newUser += ", "
+            // newUser += "\"username\":" + username;
+            // newUser += ", "
+            // newUser += "\"password\":" + password;
+            // newUser += ", "
+            // newUser += "\"phone\":" + phone;
+            // newUser += ", "
+            // newUser += "\"email\":" + email;
+            // newUser += ", "
+            // newUser += "\"balance\":" + balance;
+            // newUser += "} "
 
             
                 //if phone number is writen like ***-***-****
@@ -70,36 +85,6 @@ class Account
 
     // get and sets --- tested
 
-        // get set first name --- tested
-            get getFName()
-            {
-
-                return this.fName;
-
-            }
-
-            set setFName( fName )
-            {
-
-                this.fName = fName;
-
-            }
-
-        // get set second name --- tested
-            get getLName()
-            {
-
-                return this.lName;
-
-            }
-
-            set setLName( lName )
-            {
-
-                this.lName = lName; 
-
-            }
-        
         // get set phone --- tested
             get getPhone()
             {
@@ -449,7 +434,7 @@ class Account
 
 // test area
 
-const Acc = new Account("ryder","barr","602-989-1312","ryderbarr2008@gmail.com",200,"rbbar271","552271");
+const Acc = new Account("602-989-1312","ryderbarr2008@gmail.com",200,"rbbar271","552271", 0);
 
 console.log(Acc.balance)
 
