@@ -1,20 +1,31 @@
-//
-
 const fs = require('fs')
 
-function read(database = 'UserDataBase.json'){
-    // read JSON object from file
+function read(database = "UserDataBase.json"){
     const data = fs.readFileSync(database, 'utf8')
     return JSON.parse(data)
 }
 
 function write(obj,database = 'UserDataBase.json') {
-    if(!obj) return console.log('please provide data to save')
-    try{
-        fs.writeFileSync(database,JSON.stringify(obj)) // overwrites current data
-        return console.log("sucess")
-    } catch (err) {
-        return console.log("failed")
+
+    if ( !obj ) 
+
+    {
+
+        return console.log('please provide data to save')
+
+    }
+
+    try
+
+    {
+
+        fs.writeFileSync( database , JSON.stringify( obj ) )
+        
+    }
+
+    catch ( err ) 
+    {
+        console.log( "there is an error" )
     }
 }
 
