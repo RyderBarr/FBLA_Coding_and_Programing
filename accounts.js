@@ -1,4 +1,9 @@
-fetch('users').then().then().catch();
+
+
+//
+
+
+
 
 class Account
 {
@@ -16,179 +21,7 @@ class Account
     //expenselist
         expenseList = [];
 
-    // constructing the account includes first name, last name, phone number, email address, and balance --- tested
-        constructor ( fName = "" , lName = "" , phone = "" , email = "" , balance = 0, username = "", password = "" )
-        {
-            let newUser = "{ ";
-            newUser += "\"username\":" + username;
-            newUser += ", "
-            newUser += "\"password\":" + password;
-            newUser += ", "
-            newUser += "\"phone\":" + phone;
-            newUser += ", "
-            newUser += "\"email\":" + email;
-            newUser += ", "
-            newUser += "\"balance\":" + balance;
-            newUser += ", "
-            newUser += "\"fName\":" + fName;
-            newUser += ", "
-            newUser += "\"lName\":" + lName;
-            newUser += "} "
-            
-            
-
-            this.fName = fName;
-            this.lName = lName;
-
-            
-                //if phone number is writen like ***-***-****
-                    phonecheck:if ( phone.length == 12 )
-                    { 
-
-                        phone = phone.substring(0,3) + phone.substring(4,7) + phone.substring(8); //cuting out the - or / in the number
-                        this.phone = phone;
-                        
-                    }
-        
-                //if phone is writen like **********
-                    phonecheck:if ( phone.length == 10 )
-                    {
-
-                       this.phone = phone;
-
-                    }
-
-            this.email = email;
-
-            this.balance = balance;
-
-            this.password = password;
-
-            this.username = username;
-                    
-        }
-
-    // get and sets --- tested
-
-        // get set first name --- tested
-            get getFName()
-            {
-
-                return this.fName;
-
-            }
-
-            set setFName( fName )
-            {
-
-                this.fName = fName;
-
-            }
-
-        // get set second name --- tested
-            get getLName()
-            {
-
-                return this.lName;
-
-            }
-
-            set setLName( lName )
-            {
-
-                this.lName = lName; 
-
-            }
-        
-        // get set phone --- tested
-            get getPhone()
-            {
-
-                return this.phone;
-
-            }
-
-            set setPhone( phone )
-            {
-
-                //if phone number is writen like ***-***-****
-                    phonecheck:if ( phone.length == 12 )
-                    {
-
-                        phone = phone.substring(0,3) + phone.substring(4,7) + phone.substring(8); //cuting out the - or / in the number
-                        this.phone = phone;
-
-                    }
     
-                //if phone is writen like **********
-                    phonecheck:if ( phone.length == 10 )
-                    {
-
-                        this.phone = phone;
-
-                    }
-
-            }
-
-        // get set email --- tested
-            get getEmail()
-            {
-
-                return this.email;
-
-            }
-
-            set setEmail( email )
-            {
-
-                this.email = email;
-
-            }
-
-        //get set balance --- tested               
-            get getBalance()
-            {
-
-                return this.balance;
-
-            }
-
-            set setBalance( balance )
-            {
-
-                this.balance = balance;
-
-            }
-
-        // get set username --- tested
-            get getUsername()
-            {
-
-                return this.username;
-
-            }
-
-            set setUsername( username )
-            {
-
-                this.username = username;
-
-            }
-
-        //get set password --- tested               
-            get getPassword()
-            {
-
-                return this.password;
-
-            }
-
-            set setPassword( password )
-            {
-
-                this.password = password;
-
-            }
 
     // adds an expense to the users account --- convert to json
         expense ( amount = 0 , details = "" , record = false , date = "" , eName = "" )
@@ -445,30 +278,4 @@ class Account
         }
 
 }
-
-
-// test area
-
-const Acc = new Account("ryder","barr","602-989-1312","ryderbarr2008@gmail.com",200,"rbbar271","552271");
-
-console.log(Acc.balance)
-
-Acc.expense(10, "bought a shirt", record = true , date = "12/9/2024" , eName = "test1" )
-
-console.log(Acc.balance)
-
-console.log(Acc.changes)
-
-Acc.income(10, "bought a shirt", record = true , date = "12/9/2024" , eName = "test2" )
-
-console.log(Acc.balance)
-
-console.log(Acc.changes)
-
-Acc.incomeDeleteChange("test1")
-
-console.log(Acc.changes)
-
-
-// test area
 
