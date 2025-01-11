@@ -40,13 +40,13 @@ let users = JSON.parse(data);
 let lastJson = 0
 
 for (i in users){
-    lastJson = i
+    lastJson = i - 1 + 1
 }
 
 const Obj = {
     firstName: 'John', 
     lastName: 'Doe', 
-    id: [lastJson+1]
+    id: [lastJson]
 
 }
 users.push(Obj)
