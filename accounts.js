@@ -1,55 +1,9 @@
-const fs = require('fs')
 
-function read(database = "UserDataBase.json"){
-    const data = fs.readFileSync(database, 'utf8')
-    return JSON.parse(data)
-}
-
-function write(obj,database = 'UserDataBase.json') {
-
-    if ( !obj ) 
-
-    {
-
-        return console.log('please provide data to save')
-
-    }
-
-    try
-
-    {
-
-        fs.writeFileSync( database , JSON.stringify( obj ) )
-        
-    }
-
-    catch ( err ) 
-    {
-        console.log( "there is an error" )
-    }
-}
-
-module.exports = { read, write }
 
 //
 
 
-// if phone number is writen like ***-***-****
-// phonecheck:if ( phone.length == 12 )
-//     { 
 
-//         phone = phone.substring(0,3) + phone.substring(4,7) + phone.substring(8); //cuting out the - or / in the number
-//         this.phone = phone;
-        
-//     }
-
-// if phone is writen like **********
-//     phonecheck:if ( phone.length == 10 )
-//     {
-
-//        this.phone = phone;
-
-//     }
 
 class Account
 {
