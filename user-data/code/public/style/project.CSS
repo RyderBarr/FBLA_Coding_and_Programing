@@ -1,3 +1,7 @@
+*{
+    background-color: black;
+}
+
 fieldset{
     background-color: #444;
     border-radius: 10px;

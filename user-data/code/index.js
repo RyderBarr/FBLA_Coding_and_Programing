@@ -9,10 +9,10 @@ const app = express()
 const port = process.env.PORT || 8080
 
 app
-    // gives any static file in the public folder
-    .use(express.static('public'))
     // logs everything in development mode
     .use(morgan('dev'))
+    // gives any static file in the public folder
+    .use(express.static('public'))
     // parse application/x-www-form-urlencoded
     .use(express.urlencoded({ extend: false}))
     //parse application/json
