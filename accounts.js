@@ -1,10 +1,4 @@
 
-
-//
-
-
-
-
 class Account
 {
 
@@ -23,7 +17,7 @@ class Account
 
     
 
-    // adds an expense to the users account --- convert to json
+    // adds an expense to the users account
         expense ( amount = 0 , details = "" , record = false , date = "" , eName = "" )
         {
 
@@ -95,7 +89,7 @@ class Account
 
         }
     
-    // adds an income to the users account --- convert to json
+    // adds an income to the users account
         income ( amount = 0 , details = "", record = false , date = "" , eName = "" )
         {
 
@@ -168,7 +162,7 @@ class Account
         }
 
 
-    // i is the index number of the change that the user wants to delete --- tested --- convert to json
+    // i is the index number of the change that the user wants to delete 
         deleteChange( i = 0 ){
             
             if( i > -1 )
@@ -181,19 +175,14 @@ class Account
 
         }
 
-    // this is the same as deleteChange but it is by name --- this is what i am working on
-    // this is the same as deleteChange but it is by name --- this is what i am working on
-    // this is the same as deleteChange but it is by name --- this is what i am working on
-    // this is the same as deleteChange but it is by name --- this is what i am working on
-    // this is the same as deleteChange but it is by name --- this is what i am working on
+    // this is the same as deleteChange but it is by name 
         incomeDeleteChange( eName = "" ){
 
             // this is for loop to look through the changes
                 Deletefor:for ( let i of this.changes )
                 {
     
-                    // if the change that the loop is on, has the name inputed in is on the change 
-                    // when using json try if(json[i].name == ename) 
+                    // if the change that the loop is on, has the name inputed in is on the change  
                         setDelete:if ( i.includes( eName = "" ) )
                         {
 
@@ -227,7 +216,40 @@ class Account
                     this.incomeList[2] = " + ";
                     this.incomeList[3] = amount;
 
-                    this.changes = [this.changes, `${nEName} : ${this.incomeList}`];
+                    amountCheck:switch(true)
+                    {
+
+                        // if amount is less then 10 then add "tiny" income" to incomeList then break out of the switch
+                            case amount < 10:
+                                this.incomeList.push("tiny income");
+                                break;
+
+                        // if amount is less then 30 then add "small income" to incomeList then break out of the switch
+                            case amount < 30:
+                                this.incomeList.push("small income");
+                                break;
+
+                        // if amount is less then 60 then add :normal income" to incomeList then break out of the switch
+                            case amount < 60:
+                                this.incomeList.push("normal income");
+                                break;
+
+                        // if amount is less then 100 then add "big income" to incomeList then break out of the switch
+                            case amount < 100:
+                                this.incomeList.push("big income");
+                                break;
+
+                        // if amount is less then 500 then add "large income" to incomeList then break out of the switch
+                            case amount < 500:
+                                this.incomeList.push("large income");
+                                break;
+
+                        // if it reaches here add "huge income" to incomeList
+                            default:
+                                this.incomeList.push("huge income");    
+                    }
+
+                    this.changes.push(`${nEName} : ${this.incomeList}`);
 
                 }
 
@@ -269,7 +291,40 @@ class Account
                     this.expenseList[2] = " + ";
                     this.expenseList[3] = amount;
 
-                    this.changes = [this.changes, `${nEName} : ${this.expenseList}`];
+                    amountCheck:switch(true)
+                    {
+
+                        // if amount is less then 10 then add "tiny" expense" to expenseList then break out of the switch
+                            case amount < 10:
+                                this.expenseList.push("tiny expense");
+                                break;
+
+                        // if amount is less then 30 then add "small expense" to expenseList then break out of the switch
+                            case amount < 30:
+                                this.expenseList.push("small expense");
+                                break;
+
+                        // if amount is less then 60 then add :normal expense" to expenseList then break out of the switch
+                            case amount < 60:
+                                this.expenseList.push("normal expense");
+                                break;
+
+                        // if amount is less then 100 then add "big expense" to expenseList then break out of the switch
+                            case amount < 100:
+                                this.expenseList.push("big expense");
+                                break;
+
+                        // if amount is less then 500 then add "large expense" to expenseList then break out of the switch
+                            case amount < 500:
+                                this.expenseList.push("large expense");
+                                break;
+
+                        // if it reaches here add "huge expense" to expenseList
+                            default:
+                                this.expenseList.push("huge expense");    
+                    }
+
+                    this.changes.push(`${nEName} : ${this.expenseList}`);
 
                 }
 
@@ -278,4 +333,3 @@ class Account
         }
 
 }
-

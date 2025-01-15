@@ -1,3 +1,4 @@
+const bodyParser = require('body-parser')
 const express = require('express')
 const morgan = require('morgan')
 const {prohairesis} = require('prohairesis')
@@ -17,6 +18,13 @@ app
     .use(express.urlencoded({ extend: false}))
     //parse application/json
     .use(express.json())
+
+    //
+    .post('/api/user', (req, res) => {
+        
+        // print req.body
+        res.log(req.body)
+    })
 
     // port varible from abov e, a nameless fuction that writes out what port the server is listening to
     .listen(port, () => console.log(`server on ${port}`))
