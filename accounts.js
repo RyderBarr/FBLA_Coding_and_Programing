@@ -54,32 +54,32 @@ class Account
 
                         // if amount is less then 10 then add "tiny" expense" to expenseList then break out of the switch
                             case amount < 10:
-                                this.expenseList.push("tiny expense");
+                                this.expenseList[4] = "tiny expense";
                                 break;
 
                         // if amount is less then 30 then add "small expense" to expenseList then break out of the switch
                             case amount < 30:
-                                this.expenseList.push("small expense");
+                                this.expenseList[4] = "small expense";
                                 break;
 
                         // if amount is less then 60 then add :normal expense" to expenseList then break out of the switch
                             case amount < 60:
-                                this.expenseList.push("normal expense");
+                                this.expenseList[4] = "normal expense";
                                 break;
 
                         // if amount is less then 100 then add "big expense" to expenseList then break out of the switch
                             case amount < 100:
-                                this.expenseList.push("big expense");
+                                this.expenseList[4] = "big expense";
                                 break;
 
                         // if amount is less then 500 then add "large expense" to expenseList then break out of the switch
                             case amount < 500:
-                                this.expenseList.push("large expense");
+                                this.expenseList[4] = "large expense";
                                 break;
 
                         // if it reaches here add "huge expense" to expenseList
                             default:
-                                this.expenseList.push("huge expense");    
+                                this.expenseList[4] = "huge expense";    
                         }
 
                 //changes and expenseList are added to changes list
@@ -121,38 +121,38 @@ class Account
                         this.incomeList[2] = " + ";
                         this.incomeList[3] = amount;
 
-                    amountCheck:switch(true)
-                    {
-
-                        // if amount is less then 10 then add "tiny" income" to incomeList then break out of the switch
-                            case amount < 10:
-                                this.incomeList.push("tiny income");
-                                break;
-
-                        // if amount is less then 30 then add "small income" to incomeList then break out of the switch
-                            case amount < 30:
-                                this.incomeList.push("small income");
-                                break;
-
-                        // if amount is less then 60 then add :normal income" to incomeList then break out of the switch
-                            case amount < 60:
-                                this.incomeList.push("normal income");
-                                break;
-
-                        // if amount is less then 100 then add "big income" to incomeList then break out of the switch
-                            case amount < 100:
-                                this.incomeList.push("big income");
-                                break;
-
-                        // if amount is less then 500 then add "large income" to incomeList then break out of the switch
-                            case amount < 500:
-                                this.incomeList.push("large income");
-                                break;
-
-                        // if it reaches here add "huge income" to incomeList
-                            default:
-                                this.incomeList.push("huge income");    
-                    }
+                        amountCheck:switch(true)
+                        {
+    
+                            // if amount is less then 10 then add "tiny" income" to incomeList then break out of the switch
+                                case amount < 10:
+                                    this.incomeList[4] = "tiny income";
+                                    break;
+    
+                            // if amount is less then 30 then add "small income" to incomeList then break out of the switch
+                                case amount < 30:
+                                    this.incomeList[4] = "small income";
+                                    break;
+    
+                            // if amount is less then 60 then add :normal income" to incomeList then break out of the switch
+                                case amount < 60:
+                                    this.incomeList[4] = "normal income";
+                                    break;
+    
+                            // if amount is less then 100 then add "big income" to incomeList then break out of the switch
+                                case amount < 100:
+                                    this.incomeList[4] = "big income";
+                                    break;
+    
+                            // if amount is less then 500 then add "large income" to incomeList then break out of the switch
+                                case amount < 500:
+                                    this.incomeList [4] = "large income";
+                                    break;
+    
+                            // if it reaches here add "huge income" to incomeList
+                                default:
+                                    this.incomeList[4] = "huge income";    
+                        }
             
                     //changes and incomeList are added to changes list
                         this.changes.push( `${eName} : ${this.incomeList}`);
@@ -221,32 +221,32 @@ class Account
 
                         // if amount is less then 10 then add "tiny" income" to incomeList then break out of the switch
                             case amount < 10:
-                                this.incomeList.push("tiny income");
+                                this.incomeList[4] = "tiny income";
                                 break;
 
                         // if amount is less then 30 then add "small income" to incomeList then break out of the switch
                             case amount < 30:
-                                this.incomeList.push("small income");
+                                this.incomeList[4] = "small income";
                                 break;
 
                         // if amount is less then 60 then add :normal income" to incomeList then break out of the switch
                             case amount < 60:
-                                this.incomeList.push("normal income");
+                                this.incomeList[4] = "normal income";
                                 break;
 
                         // if amount is less then 100 then add "big income" to incomeList then break out of the switch
                             case amount < 100:
-                                this.incomeList.push("big income");
+                                this.incomeList[4] = "big income";
                                 break;
 
                         // if amount is less then 500 then add "large income" to incomeList then break out of the switch
                             case amount < 500:
-                                this.incomeList.push("large income");
+                                this.incomeList [4] = "large income";
                                 break;
 
                         // if it reaches here add "huge income" to incomeList
                             default:
-                                this.incomeList.push("huge income");    
+                                this.incomeList[4] = "huge income";    
                     }
 
                     this.changes.push(`${nEName} : ${this.incomeList}`);
@@ -296,32 +296,33 @@ class Account
 
                         // if amount is less then 10 then add "tiny" expense" to expenseList then break out of the switch
                             case amount < 10:
-                                this.expenseList.push("tiny expense");
+                                this.expenseList[4] = "tiny expense";
                                 break;
 
                         // if amount is less then 30 then add "small expense" to expenseList then break out of the switch
                             case amount < 30:
-                                this.expenseList.push("small expense");
+                                this.expenseList[4] = "small expense";
                                 break;
 
                         // if amount is less then 60 then add :normal expense" to expenseList then break out of the switch
                             case amount < 60:
-                                this.expenseList.push("normal expense");
+                                this.expenseList[4] = "normal expense";
                                 break;
 
                         // if amount is less then 100 then add "big expense" to expenseList then break out of the switch
                             case amount < 100:
-                                this.expenseList.push("big expense");
+                            this.expenseList[4] = "big expense";
                                 break;
 
                         // if amount is less then 500 then add "large expense" to expenseList then break out of the switch
                             case amount < 500:
-                                this.expenseList.push("large expense");
+                                this.expenseList[4] = "large expense";
                                 break;
 
                         // if it reaches here add "huge expense" to expenseList
                             default:
-                                this.expenseList.push("huge expense");    
+                                this.expenseList[4] = "huge expense"; 
+
                     }
 
                     this.changes.push(`${nEName} : ${this.expenseList}`);
