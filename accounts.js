@@ -46,7 +46,7 @@ class Account
                     //expenseList will contain details, the date and the amount * -1
                         this.expenseList[0] = details;
                         this.expenseList[1] = date;
-                        this.expenseList[2] = " + ";
+                        this.expenseList[2] = " - ";
                         this.expenseList[3] = amount;
 
                     // if the amount is less then ten catigorize as a tiny expense 
@@ -89,7 +89,11 @@ class Account
 
         }
     
+<<<<<<< Updated upstream
     // adds an income to the users account
+=======
+    // adds an income to the users account 
+>>>>>>> Stashed changes
         income ( amount = 0 , details = "", record = false , date = "" , eName = "" )
         {
 
@@ -162,7 +166,11 @@ class Account
         }
 
 
+<<<<<<< Updated upstream
     // i is the index number of the change that the user wants to delete 
+=======
+    // i is the index number of the change that the user wants to delete
+>>>>>>> Stashed changes
         deleteChange( i = 0 ){
             
             if( i > -1 )
@@ -175,14 +183,22 @@ class Account
 
         }
 
+<<<<<<< Updated upstream
     // this is the same as deleteChange but it is by name 
+=======
+    // this is the same as deleteChange but it is by name
+>>>>>>> Stashed changes
         incomeDeleteChange( eName = "" ){
 
             // this is for loop to look through the changes
                 Deletefor:for ( let i of this.changes )
                 {
     
+<<<<<<< Updated upstream
                     // if the change that the loop is on, has the name inputed in is on the change  
+=======
+                    // if the change that the loop is on, has the name inputed in is on the change 
+>>>>>>> Stashed changes
                         setDelete:if ( i.includes( eName = "" ) )
                         {
 
@@ -197,7 +213,6 @@ class Account
                         }
     
                 }
-        
 
         }
 
@@ -216,6 +231,7 @@ class Account
                     this.incomeList[2] = " + ";
                     this.incomeList[3] = amount;
 
+<<<<<<< Updated upstream
                     amountCheck:switch(true)
                     {
 
@@ -250,6 +266,9 @@ class Account
                     }
 
                     this.changes.push(`${nEName} : ${this.incomeList}`);
+=======
+                    this.changes.push(`${nEName} : ${this.expenseList}`);
+>>>>>>> Stashed changes
 
                 }
 
@@ -288,9 +307,10 @@ class Account
 
                     this.expenseList[0] = "no details";
                     this.expenseList[1] = date;
-                    this.expenseList[2] = " + ";
+                    this.expenseList[2] = " - ";
                     this.expenseList[3] = amount;
 
+<<<<<<< Updated upstream
                     amountCheck:switch(true)
                     {
 
@@ -325,6 +345,8 @@ class Account
 
                     }
 
+=======
+>>>>>>> Stashed changes
                     this.changes.push(`${nEName} : ${this.expenseList}`);
 
                 }
