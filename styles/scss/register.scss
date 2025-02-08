@@ -1,0 +1,55 @@
+@import './partials/_header.scss';
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .register-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .info-box {
+            background-color: #1522ce;
+            color: white;
+            width: 40%;
+            border-radius: 25px 0 0 25px;
+            padding: 10px;
+        }
+        .register-box {
+            background-color: lightgray;
+            width: 40%;
+            border-radius: 0 25px 25px 0;
+            padding: 10px;
+            form {
+                p {
+                    margin: 25px;
+                    input {
+                        background-color: gray;
+                        color: white;
+                        width: 95%;
+                    }
+                }
+                .button-container {
+                    text-align: center;
+                    button {
+                        background-color: #15ce65;
+                        color: white;
+                        font-size: 2rem;
+                        font-weight: bold;
+                        border: 4px solid green;
+                        border-radius: 15px;
+                        &:hover {
+                            background-color: lime;
+                            border: 4px solid white;
+                        }
+                        &:active {
+                            background-color: black;
+                            border: 4px solid white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
