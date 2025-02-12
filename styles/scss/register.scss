@@ -4,11 +4,15 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 75%;
 
     .register-container {
+        width: 60%;
+        height: 75%;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        h1 {text-align: center;}
         .info-box {
             background-color: #1522ce;
             color: white;
@@ -18,15 +22,17 @@ main {
         }
         .register-box {
             background-color: lightgray;
-            width: 40%;
+            width: 60%;
             border-radius: 0 25px 25px 0;
             padding: 10px;
             form {
                 p {
+                    font-size: 1.5rem;
                     margin: 25px;
                     input {
                         background-color: gray;
                         color: white;
+                        font-size: 1.5rem;
                         width: 95%;
                     }
                 }
