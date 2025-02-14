@@ -5,7 +5,6 @@ main {
     flex-direction: column;
     align-items: center;
     height: 75%;
-
     .register-container {
         width: 60%;
         height: 75%;
@@ -27,12 +26,12 @@ main {
             padding: 10px;
             form {
                 p {
-                    font-size: 1.5rem;
-                    margin: 25px;
+                    font-size: 2rem;
+                    margin: 2%;
                     input {
                         background-color: gray;
                         color: white;
-                        font-size: 1.5rem;
+                        font-size: 2rem;
                         width: 95%;
                     }
                 }
@@ -52,6 +51,65 @@ main {
                         &:active {
                             background-color: black;
                             border: 4px solid white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    main {
+        height: 80%;
+        .register-container {
+            .register-box {
+                form {
+                    p {
+                        font-size: 1.5rem;
+                        input {
+                            font-size: 1.5rem;
+                        }
+                    }
+                    .button-container {
+                        button {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    main {
+        .register-container {
+            width: 75%;
+            height: 90%;
+            flex-direction: column-reverse;
+            .info-box {
+                width: 100%;
+                height: 40%;
+                border-radius: 0 0 25px 25px;
+                h1 {font-size: 1rem;}
+                p {font-size: 0.5rem;}
+            }
+            .register-box {
+                width: 100%;
+                height: 60%;
+                border-radius: 25px 25px 0 0;
+                h1 {margin: 5px;}
+                form {
+                    p {
+                        font-size: 1rem;
+                        input {
+                            font-size: 1rem;
+                        }
+                    }
+                    .button-container {
+                        button {
+                            font-size: 1rem;
                         }
                     }
                 }

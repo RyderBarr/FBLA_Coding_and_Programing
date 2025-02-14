@@ -87,16 +87,17 @@ main {
 }
 main .login-box {
   background-color: lightgray;
-  width: 30%;
-  height: 50%;
+  width: 35%;
+  height: 55%;
   border-radius: 25px;
 }
 main .login-box h1 {
+  font-size: 2.5rem;
   text-align: center;
 }
 main .login-box form p {
   font-size: 2rem;
-  margin: 50px;
+  margin: 6%;
 }
 main .login-box form p input {
   background-color: gray;
@@ -122,4 +123,34 @@ main .login-box form .button-container button:hover {
 main .login-box form .button-container button:active {
   background-color: black;
   border: 4px solid white;
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    height: 80%;
+  }
+  main .login-box {
+    width: 75%;
+    height: 400px;
+  }
+  main .login-box form p {
+    margin: 2%;
+  }
+  main .login-box form .button-container button {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  main .login-box {
+    height: 275px;
+  }
+  main .login-box form p {
+    font-size: 1.25rem;
+  }
+  main .login-box form p input {
+    font-size: 1.25rem;
+  }
+  main .login-box form .button-container button {
+    font-size: 2rem;
+  }
 }/*# sourceMappingURL=login.css.map */

@@ -109,13 +109,13 @@ main .register-container .register-box {
   padding: 10px;
 }
 main .register-container .register-box form p {
-  font-size: 1.5rem;
-  margin: 25px;
+  font-size: 2rem;
+  margin: 2%;
 }
 main .register-container .register-box form p input {
   background-color: gray;
   color: white;
-  font-size: 1.5rem;
+  font-size: 2rem;
   width: 95%;
 }
 main .register-container .register-box form .button-container {
@@ -136,4 +136,54 @@ main .register-container .register-box form .button-container button:hover {
 main .register-container .register-box form .button-container button:active {
   background-color: black;
   border: 4px solid white;
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    height: 80%;
+  }
+  main .register-container .register-box form p {
+    font-size: 1.5rem;
+  }
+  main .register-container .register-box form p input {
+    font-size: 1.5rem;
+  }
+  main .register-container .register-box form .button-container button {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 720px) {
+  main .register-container {
+    width: 75%;
+    height: 90%;
+    flex-direction: column-reverse;
+  }
+  main .register-container .info-box {
+    width: 100%;
+    height: 40%;
+    border-radius: 0 0 25px 25px;
+  }
+  main .register-container .info-box h1 {
+    font-size: 1rem;
+  }
+  main .register-container .info-box p {
+    font-size: 0.5rem;
+  }
+  main .register-container .register-box {
+    width: 100%;
+    height: 60%;
+    border-radius: 25px 25px 0 0;
+  }
+  main .register-container .register-box h1 {
+    margin: 5px;
+  }
+  main .register-container .register-box form p {
+    font-size: 1rem;
+  }
+  main .register-container .register-box form p input {
+    font-size: 1rem;
+  }
+  main .register-container .register-box form .button-container button {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=register.css.map */
