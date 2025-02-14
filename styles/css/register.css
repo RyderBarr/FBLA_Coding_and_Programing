@@ -1,0 +1,189 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #F5F5E5;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  background-color: #15ce65;
+  border-bottom: 1rem solid #cec115;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+header div {
+  width: 20%;
+  text-align: center;
+}
+header div h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+nav {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+}
+nav a {
+  color: #ce157e;
+  text-decoration: none;
+  font-size: 2rem;
+}
+nav a:visited {
+  color: #ce157e;
+}
+nav a:hover {
+  color: #fe959e;
+}
+
+@media screen and (max-width: 1200px) {
+  header {
+    margin-bottom: 1rem;
+  }
+  header div img {
+    width: 75%;
+  }
+  header div h1 {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  nav a {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  header {
+    margin-bottom: 1rem;
+  }
+  header div {
+    width: 25%;
+  }
+  header div img {
+    width: 75%;
+  }
+  header div h1 {
+    font-weight: 900;
+  }
+  nav {
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 75%;
+}
+main .register-container {
+  width: 60%;
+  height: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+main .register-container h1 {
+  text-align: center;
+}
+main .register-container .info-box {
+  background-color: #1522ce;
+  color: white;
+  width: 40%;
+  border-radius: 25px 0 0 25px;
+  padding: 10px;
+}
+main .register-container .register-box {
+  background-color: lightgray;
+  width: 60%;
+  border-radius: 0 25px 25px 0;
+  padding: 10px;
+}
+main .register-container .register-box form p {
+  font-size: 2rem;
+  margin: 2%;
+}
+main .register-container .register-box form p input {
+  background-color: gray;
+  color: white;
+  font-size: 2rem;
+  width: 95%;
+}
+main .register-container .register-box form .button-container {
+  text-align: center;
+}
+main .register-container .register-box form .button-container button {
+  background-color: #15ce65;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 4px solid green;
+  border-radius: 15px;
+}
+main .register-container .register-box form .button-container button:hover {
+  background-color: lime;
+  border: 4px solid white;
+}
+main .register-container .register-box form .button-container button:active {
+  background-color: black;
+  border: 4px solid white;
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    height: 80%;
+  }
+  main .register-container .register-box form p {
+    font-size: 1.5rem;
+  }
+  main .register-container .register-box form p input {
+    font-size: 1.5rem;
+  }
+  main .register-container .register-box form .button-container button {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 720px) {
+  main .register-container {
+    width: 75%;
+    height: 90%;
+    flex-direction: column-reverse;
+  }
+  main .register-container .info-box {
+    width: 100%;
+    height: 40%;
+    border-radius: 0 0 25px 25px;
+  }
+  main .register-container .info-box h1 {
+    font-size: 1rem;
+  }
+  main .register-container .info-box p {
+    font-size: 0.5rem;
+  }
+  main .register-container .register-box {
+    width: 100%;
+    height: 60%;
+    border-radius: 25px 25px 0 0;
+  }
+  main .register-container .register-box h1 {
+    margin: 5px;
+  }
+  main .register-container .register-box form p {
+    font-size: 1rem;
+  }
+  main .register-container .register-box form p input {
+    font-size: 1rem;
+  }
+  main .register-container .register-box form .button-container button {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=register.css.map */
