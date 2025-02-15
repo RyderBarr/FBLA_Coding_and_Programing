@@ -10,118 +10,457 @@
 
     <title>finanice</title>
 
-    <script src="https://unpkg.com/@tailwindcss/browser@4">
-    
-    </script>
+    <!-- tailwind link -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <style>
+
+        body{
+
+        }
+
+        header{
+
+        }
+
+        .head-cont{
+
+        }
+
+        nav{
+
+        }
+
+        main{
+
+        }
+
+        .tra-his{
+
+        }
+
+        .fun-box{
+
+        }
+
+        button{
+
+        }
+
+    </style>
+    <!-- ^-- just for color -->
 
 </head>
 
-<body class="flex items-center justify-center flex-col">
+<body class=" body
+flex items-center justify-center flex-col
+bg-green-100
+min-h-screen
+">
 
-    <header class="w-1/1 outline-2 outline-black outline-solid bg-sky-50 mb-2 pb-2 h-[9vh]">
+    <!-- tail wind above explained
+        flex items-center justify-top flex-col 
+            - makes the body a flexbox. positions the header, main, footer as far top as they can go.  makes it so the header sits on top of the main which sits on top of the footer
 
-        <h2 class="float-right text-3xl"> managing finances </h2>
+        bg-green-100 
+            - makes the background a light green
 
-        <nav class="flex items-center justify-evenly flex-row w-1/1 mb-2">
+        min-h-screen 
+            - makes the body(at lest) the full langth of the screen
+            
+        -->
 
-            <a class=""> lorem </a>
-    
-            <a class=""> lorem </a>
-    
-            <a class=""> lorem </a>
-    
-            <a class=""> lorem </a>
-    
+
+
+    <!--    | : header includes
+            v : logo, tittle, nav -->
+
+    <header class="
+    flex items-center justify-center flex-row 
+    ">
+
+        <!-- tail wind above explained 
+
+            flex items-center justify-center flex-row
+                - which displays both of the divs in side next to each other as opposed to above on another
+            
+            -->
+
+
+
+        <!--    | : content for header
+                V -->
+
+        <div class="head-cont
+        flex items-center justify-center flex-row 
+        ">
+
+            <!-- tail wind above explained
+
+                flex items-center justify-center flex-row 
+                    - which displays the text and image next to eachother
+                    
+                -->
+
+
+
+            <!--    | : text
+                    v -->
+
+            <div class="
+            
+            ">
+
+                <!-- tail wind above explained
+
+                    tailwind
+                        - explain
+
+                    -->
+
+
+
+                <h1>
+
+                    managing finances
+                    
+                </h1>
+
+
+
+            </div>
+
+
+
+            <!--    | : logo
+                    v -->
+
+            <img src="" alt="green gradguation cap with the words Scholarly in the toop left and Capital in bottom right" class="
+            
+            ">
+
+            <!-- tail wind above explained 
+                    
+                    tailwind
+                        -explained
+                    
+                -->
+
+
+
+        </div>
+
+        <!-- | : nav 
+             v -->
+
+        <nav class=" 
+        flex items-center justify-center flex-row
+        ">
+
+            <!-- tail wind above explained
+                    
+                flex items-center justify-center flex-row 
+                    - displays each link next to each other 
+                    
+            -->
+
+
+
+            <a href="#" class="me-1">nav-link</a>
+                <!-- me-1 spaces it(at the end) by 1px -->
+
+            <a href="#" class="me-1">nav-link</a>
+                <!-- look at top link for explination -->
+
+            <a href="#" class="me-1">nav-link</a>
+                <!-- look at top link for explination -->
+
+
+
+            <a href="#" class="">nav-link</a>
+                <!-- doesn't need me-1 because it is at the end -->
+
+
+
         </nav>
+
+
 
     </header>
 
-    <main class="flex items-top justify-evenly flex-row w-1/1 mb-2">
 
-        <section class="flex items-center justify-top flex-col float-right outline-2 outline-black outline-solid bg-sky-50 w-49/100 min-h-[89vh] h-auto">
 
-            <!-- create buttons in js -->
+    <!--    | : main includes
+            v : transaction history, and functionality -->
 
-        </section>
+    <main class="
+    flex items-center justify-center flex-row
+    ">
 
-        <section class="flex items-center justify-between flex-col float-right outline-2 outline-black outline-solid bg-sky-50 w-49/100 h-[89vh]">
+        <!-- tail wind above explained
+            flex items-center justify-center flex-row
+                - places the transaction history side by side with the functionality box
 
-            <div class="flex items-top justify-center flex-row h-[44.5vh]">
+        -->
 
-                <form action="" method="post">
 
-                    <button type="submit">
-                        button
-                    </button>
+                
+        <!--    | : idea 
+         - each transaction has its own button that will be made and put in here each button has a preditermend height and width that will match width the content(cont-box) then the transaction history div will act as a window that has a scroll bar -->
 
-                    <div>
+        <!--    | : trascation history 
+                v   -->
 
-                        <label for=""></label>
-                    
-                        <input type="text" placeholder="text">
+        <div 
+        class="tra-his
 
-                    </div>
+        ">
 
-                </form>
+            <!-- tail wind above explained
+                -->
 
-                <form action="" method="post">
 
-                    <button type="submit">
-                        button
-                    </button>
 
-                    <div>
+            <!--    | : content
+                    v -->
+
+            <div id="cont-box"
+            class="
+            h-auto
+            ">
+
+            <!-- tail wind above explained
+                
+                    h-auto
+                        - makes it so the hieght matches the contents hieght
+
+            -->
+
+
+                
+                <button></button>
+
+
+
+            </div>
+    
+
+            
+        </div>
+
+
+
+        <!--    | : functionality box includes
+                v : button(1), button(2), button(3), and button(4) -->
+
+        <div
+        class="fun-box
+        flex items-center justify-center flex-col
+        ">
+
+            <!-- tail wind above explained
+                    flex items-center justify-center flex-col 
+                        - makes div(top2) on top of div(bottom2) 
                         
-                        <label for=""></label>
-                    
-                        <input type="text" placeholder="text">
+                -->
+
+
+
+            <!--    | : top section of buttons includes
+                    v : button(1), and button(2) -->
+
+            <div id="top2" 
+            class="
+                flex items-center justify-center flex-row
+            ">
+
+                <!-- tail wind above explained
+                        flex items-center justify-center flex-row 
+                            - puts button(1) next to button(2) 
+                            
+                    -->
+
+
+
+                    <!-- button(1) -->
+
+                    <div id="button1" 
+                    class="
+
+                    ">
+
+                        <!-- tail wind above explained 
+                                tailwind
+                                    -explained
+                                
+                            -->
+
+
+
+                            <label for="Button1"></label>
+
+
+
+                            <!-- button with do jQuery-->
+
+                            <button id="button1" name="Button1"></button>
+
+
+
+
+                            <!-- get the stuff from monte -->
+
+                            <form action="" method="get">
+
+                            </form>
 
                     </div>
+                    
+                    <!-- button(2) -->
+                     
+                    <div id="button2" 
+                    class="
 
-                </form>
+                    ">
+                        <!-- tail wind above explained 
+                                tailwind
+                                    -explained
+                                
+                            -->
+
+
+
+                            <label for="Button2"></label>
+
+
+
+                            <!-- do jQuery for this later -->
+
+                            <button id="button2" name="Button2"></button>
+
+
+
+                            <!-- get the stuff from monte -->
+
+                            <form action="" method="get">
+
+                            </form>
+
+                    </div>
 
             </div>
 
-            <div class="flex items-bottom justify-center flex-row h-[44.5vh]">
 
-                <form action="" method="post">
 
-                    <button type="submit">
-                        button
-                    </button>
+            <!--    | : bottom section of buttons includes
+                    v : button(3), and button(4) -->
 
-                    <div>
+            <div id="bottom2" 
+            class="
+            flex items-center justify-center flex-row
+            ">
 
-                        <label for=""></label>
+                <!-- tail wind above explained
+                        flex items-center justify-center flex-row 
+                            - puts button(3) next to button(4)
+                    -->
+
+
+
+                    <!-- button(3) -->
+
+                    <div class="
+
+                    ">
+
+                        <!-- tail wind above explained 
+                                tailwind
+                                    -explained
+                                
+                            -->
+
+
+
+                            <label for="Button3"></label>
+
+
+
+                            <!-- button with do jQuery-->
+
+                            <button id="button3" name="Button3"></button>
+
+
+
+                            <!-- get the stuff from monte -->
+
+                            <form action="" method="get">
+
+                            </form>
+
+                    </div>
                     
-                        <input type="text" placeholder="text">
+
+
+                    <!-- button(4) -->
+
+                    <div class="
+
+                    ">
+
+                        <!-- tail wind above explained 
+                                tailwind
+                                    -explained
+                                
+                            -->
+
+
+
+                            <label for="Button4"></label>
+
+
+
+                            <!-- button with do jQuery-->
+
+                            <button id="button4" name="Button4"></button>
+
+
+
+                            <!-- get the stuff from monte -->
+
+                            <form action="" method="get">
+
+                            </form>
+
+
 
                     </div>
 
-                </form>
 
-                <form action="" method="post">
-
-                    <button type="submit">
-                        button
-                    </button>
-
-                    <div>
-                        
-                        <label for=""></label>
-                    
-                        <input type="text" placeholder="text">
-
-                    </div>
-
-                </form>
 
             </div>
 
-        </section>
+
+
+        </div>
+
+
 
     </main>
 
+
+
+    <!--    | : footer includes
+            v : same as other sites -->
+
+    <footer>
+
+
+    </footer>
+    
+
+
 </body>
+
+
 
 </html>
