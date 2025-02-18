@@ -15,37 +15,6 @@
 
     <style>
 
-        body{
-
-        }
-
-        header{
-
-        }
-
-        .head-cont{
-
-        }
-
-        nav{
-
-        }
-
-        main{
-
-        }
-
-        .tra-his{
-
-        }
-
-        .fun-box{
-
-        }
-
-        button{
-
-        }
 
     </style>
     <!-- ^-- just for color -->
@@ -76,113 +45,167 @@ min-h-screen
             v : logo, tittle, nav -->
 
     <header class="
-    flex items-center justify-center flex-row 
+    flex items-center justify-center flex-col md:flex-row 
     ">
 
         <!-- tail wind above explained 
 
-            flex items-center justify-center flex-row
-                - which displays both of the divs in side next to each other as opposed to above on another
+            flex items-center justify-center flex-col
+                - which displays items on top of each other
+
+            md:flex-row
+                -when width bigger then a horizontal phone it presents objects next to eachother  
+            
+        -->
+
+
+
+        <!--    | : normal header stuff
+                v : title and nav -->
+
+        <div class="
+        flex items-center justify-center flex-col
+        ">
+    
+            <!-- tail wind above explained 
+
+                flex items-center justify-center flex-col
+                    - which displays items on top of each other
+
             
             -->
 
 
 
-        <!--    | : content for header
-                V -->
+            <!--    | : content for header
+            V -->
 
-        <div class="head-cont
-        flex items-center justify-center flex-row 
+            <div class="head-cont
+            flex items-center justify-center flex-row 
+            ">
+        
+                <!-- tail wind above explained
+        
+                    flex items-center justify-center flex-row 
+                        - which displays the text and image next to eachother
+                            
+                -->
+        
+        
+        
+                <!--    | : text
+                        v -->
+        
+                <div class="
+                    
+                ">
+        
+                    <!-- tail wind above explained
+    
+                        tailwind
+                            - explain
+        
+                    -->
+        
+        
+        
+                    <h1>
+        
+                        managing finances
+                        
+                    </h1>
+        
+        
+        
+                </div>
+        
+        
+        
+                <!--    | : logo
+                        v -->
+        
+                <img src="" alt="green gradguation cap with the words Scholarly in the toop left and Capital in bottom right" class="
+                    
+                ">
+        
+                <!-- tail wind above explained 
+                            
+                        tailwind
+                            -explained
+                            
+                -->
+        
+        
+        
+            </div>
+        
+
+
+            <!-- | : nav 
+                 v -->
+    
+            <nav class=" 
+            flex items-center justify-center flex-row
+            ">
+        
+                <!-- tail wind above explained
+                            
+                    flex items-center justify-center flex-row 
+                        - displays each link next to each other 
+                            
+                -->
+        
+        
+        
+                <a href="#" class="me-1">nav-link</a>
+                    <!-- me-1 spaces it(at the end) by 1px -->
+        
+                <a href="#" class="me-1">nav-link</a>
+                    <!-- look at top link for explination -->
+        
+                <a href="#" class="me-1">nav-link</a>
+                    <!-- look at top link for explination -->
+        
+        
+        
+                <a href="#" class="">nav-link</a>
+                    <!-- doesn't need me-1 because it is at the end -->
+        
+        
+        
+            </nav>
+        
+
+
+        </div>
+
+
+
+        <!--    | : selcted transaction
+                v -->
+
+        <div class="
+        outline-2 outline-black outline-solid
         ">
 
             <!-- tail wind above explained
 
-                flex items-center justify-center flex-row 
-                    - which displays the text and image next to eachother
-                    
-                -->
+                outline-2 outline-black outline-solid
+                    -sets a border with an outline that is 2 px's thick, black, and solid
+
+            -->
 
 
 
-            <!--    | : text
-                    v -->
-
-            <div class="
-            
-            ">
-
-                <!-- tail wind above explained
-
-                    tailwind
-                        - explain
-
-                    -->
-
-
-
-                <h1>
-
-                    managing finances
-                    
-                </h1>
-
-
+            <!--    | :the actual transaction info
+                    v : -->
+            <div>
 
             </div>
 
 
 
-            <!--    | : logo
-                    v -->
-
-            <img src="" alt="green gradguation cap with the words Scholarly in the toop left and Capital in bottom right" class="
-            
-            ">
-
-            <!-- tail wind above explained 
-                    
-                    tailwind
-                        -explained
-                    
-                -->
-
-
-
         </div>
-
-        <!-- | : nav 
-             v -->
-
-        <nav class=" 
-        flex items-center justify-center flex-row
-        ">
-
-            <!-- tail wind above explained
-                    
-                flex items-center justify-center flex-row 
-                    - displays each link next to each other 
-                    
-            -->
-
-
-
-            <a href="#" class="me-1">nav-link</a>
-                <!-- me-1 spaces it(at the end) by 1px -->
-
-            <a href="#" class="me-1">nav-link</a>
-                <!-- look at top link for explination -->
-
-            <a href="#" class="me-1">nav-link</a>
-                <!-- look at top link for explination -->
-
-
-
-            <a href="#" class="">nav-link</a>
-                <!-- doesn't need me-1 because it is at the end -->
-
-
-
-        </nav>
 
 
 
@@ -245,7 +268,7 @@ min-h-screen
             </div>
     
 
-            
+
         </div>
 
 
