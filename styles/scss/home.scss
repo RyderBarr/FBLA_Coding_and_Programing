@@ -26,7 +26,8 @@ main {
     color: white;
     font-size: 2rem;
     font-weight: bold;
-    border: 4px solid darkblue;
+    text-decoration: none;
+    border: 4px solid black;
     border-radius: 15px;
     padding: 10px 55.5px;
     &:hover {
@@ -40,15 +41,16 @@ main {
 }
 
 .register-button {
-    background-color: #15ce65;
+    background-color: forestgreen;
     color: white;
     font-size: 2rem;
     font-weight: bold;
-    border: 4px solid green;
+    text-decoration: none;
+    border: 4px solid black;
     border-radius: 15px;
     padding: 10px 30px;
     &:hover {
-        background-color: lime;
+        background-color: #15ce65;
         border: 4px solid white;
     }
     &:active {
