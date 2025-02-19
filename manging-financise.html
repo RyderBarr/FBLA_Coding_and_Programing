@@ -22,9 +22,10 @@
 </head>
 
 <body class=" body
-flex items-center justify-center flex-col
+flex items-center justify-top flex-col
 bg-green-100
 min-h-screen
+h-auto
 ">
 
     <!-- tail wind above explained
@@ -45,7 +46,12 @@ min-h-screen
             v : logo, tittle, nav -->
 
     <header class="
-    flex items-center justify-center flex-col md:flex-row 
+    flex items-center justify-evenly flex-col md:flex-row
+    outline-2 outline-black outline-solid
+    bg-blue-600 
+    w-97/100
+    min-h-10 h-auto
+    m-2
     ">
 
         <!-- tail wind above explained 
@@ -56,6 +62,8 @@ min-h-screen
             md:flex-row
                 -when width bigger then a horizontal phone it presents objects next to eachother  
             
+            outline-2 outline-black outline-solid
+                -create border
         -->
 
 
@@ -64,7 +72,12 @@ min-h-screen
                 v : title and nav -->
 
         <div class="
-        flex items-center justify-center flex-col
+        flex items-center justify-evenly flex-col
+        outline-2 outline-black outline-solid
+        bg-blue-500 
+        w-98/100 md:59/100
+        min-h-10 h-auto
+        m-1
         ">
     
             <!-- tail wind above explained 
@@ -81,7 +94,12 @@ min-h-screen
             V -->
 
             <div class="head-cont
-            flex items-center justify-center flex-row 
+            flex items-center justify-evenly flex-row 
+            outline-2 outline-black outline-solid 
+            bg-blue-400 
+            w-97/100
+            min-h-10 h-auto
+            m-1
             ">
         
                 <!-- tail wind above explained
@@ -97,7 +115,12 @@ min-h-screen
                         v -->
         
                 <div class="
-                    
+                bg-blue-300
+                text-2xl
+                min-h-10 h-auto
+                w-auto max-w-70/100
+                p-1
+                m-1
                 ">
         
                     <!-- tail wind above explained
@@ -124,8 +147,12 @@ min-h-screen
                 <!--    | : logo
                         v -->
         
-                <img src="" alt="green gradguation cap with the words Scholarly in the toop left and Capital in bottom right" class="
-                    
+                <img src="./image/george harrison.jpg" alt="green gradguation cap with the words Scholarly in the toop left and Capital in bottom right" class="
+                    bg-blue-300
+                    outline-2 outline-black outline-solid
+                    min-h-10 h-auto
+                    max-w-30
+                    m-1
                 ">
         
                 <!-- tail wind above explained 
@@ -145,7 +172,12 @@ min-h-screen
                  v -->
     
             <nav class=" 
-            flex items-center justify-center flex-row
+            flex items-center justify-evenly flex-row
+            outline-2 outline-black outline-solid 
+            bg-blue-400
+            w-97/100
+            min-h-10 h-auto
+            m-1
             ">
         
                 <!-- tail wind above explained
@@ -157,19 +189,29 @@ min-h-screen
         
         
         
-                <a href="#" class="me-1">nav-link</a>
-                    <!-- me-1 spaces it(at the end) by 1px -->
+                <a href="#" class="
+                ms-1
+                underline
+                text-purple-300
+                ">nav-link</a>
         
-                <a href="#" class="me-1">nav-link</a>
-                    <!-- look at top link for explination -->
+                <a href="#" class="
+                mx-1
+                underline
+                text-purple-300
+                ">nav-link</a>
         
-                <a href="#" class="me-1">nav-link</a>
-                    <!-- look at top link for explination -->
+                <a href="#" class="
+                mx-1
+                underline
+                text-purple-300
+                ">nav-link</a>        
         
-        
-        
-                <a href="#" class="">nav-link</a>
-                    <!-- doesn't need me-1 because it is at the end -->
+                <a href="#" class="
+                underline
+                me-1
+                text-purple-300
+                ">nav-link</a>
         
         
         
@@ -186,6 +228,10 @@ min-h-screen
 
         <div class="
         outline-2 outline-black outline-solid
+        bg-blue-500
+        w-98/100 md:40/100
+        min-h-30 h-auto
+        m-1
         ">
 
             <!-- tail wind above explained
@@ -200,6 +246,9 @@ min-h-screen
             <!--    | :the actual transaction info
                     v : -->
             <div>
+
+                transaction
+                info
 
             </div>
 
@@ -218,6 +267,11 @@ min-h-screen
 
     <main class="
     flex items-center justify-center flex-row
+    outline-2 outline-black outline-solid
+    bg-red-100
+    min-h-10 h-auto
+    min-w-97/100 w-auto
+    m-1
     ">
 
         <!-- tail wind above explained
@@ -228,49 +282,91 @@ min-h-screen
 
 
                 
-        <!--    | : idea 
-         - each transaction has its own button that will be made and put in here each button has a preditermend height and width that will match width the content(cont-box) then the transaction history div will act as a window that has a scroll bar -->
-
-        <!--    | : trascation history 
-                v   -->
-
-        <div 
-        class="tra-his
-
+        <!-- right side of main -->
+        <div class="
+        flex items-center justify-evenly flex-col
+        min-w-48/100 w-auto
+        min-h-30 h-auto
         ">
 
-            <!-- tail wind above explained
-                -->
+
+
+        <!--    | export 
+                v-->
+
+        <div class="
+        outline-2 outline-black outline-solid   
+        w-98/100 
+        h-7
+        
+        ">
 
 
 
-            <!--    | : content
-                    v -->
+        <!--    | export button
+                v -->
 
-            <div id="cont-box"
-            class="
-            h-auto
-            ">
+        <button>
+            buttons go here
+        </button>
 
-            <!-- tail wind above explained
-                
-                    h-auto
-                        - makes it so the hieght matches the contents hieght
-
-            -->
-
-
-                
-                <button></button>
-
-
-
-            </div>
-    
 
 
         </div>
 
+
+
+                <!--    | : idea 
+                - each transaction has its own button that will be made and put in here each button has a preditermend height and width that will match width the content(cont-box) then the transaction history div will act as a window that has a scroll bar -->
+
+                <!--    | : trascation history 
+                        v   -->
+
+                <div 
+                class="tra-his
+                    outline-2 outline-black outline-solid
+                    min-h-18 
+                    min-w-98/100 
+                ">
+        
+                    <!-- tail wind above explained
+                        -->
+        
+        
+        
+                    <!--    | : content
+                            v -->
+        
+                    <div id="cont-box"
+                    class="
+                    outline-2 outline-black outline-solid
+                    bg-red-300
+                    h-auto
+                    min-w-96/100 w-auto
+                    ">
+        
+                    <!-- tail wind above explained
+                        
+                            h-auto
+                                - makes it so the hieght matches the contents hieght
+        
+                    -->
+        
+        
+                        
+                        <button> transaction example</button>
+        
+        
+        
+                    </div>
+            
+        
+        
+                </div>
+
+
+
+        </div>
 
 
         <!--    | : functionality box includes
@@ -278,7 +374,13 @@ min-h-screen
 
         <div
         class="fun-box
-        flex items-center justify-center flex-col
+        flex items-center justify-evenly flex-col
+        outline-2 outline-black outline-solid
+        bg-red-300
+        min-h-10 h-auto
+        min-w-48/100 w-auto
+        m-1
+        text-xs
         ">
 
             <!-- tail wind above explained
@@ -294,7 +396,10 @@ min-h-screen
 
             <div id="top2" 
             class="
-                flex items-center justify-center flex-row
+                flex items-center justify-between flex-row
+                min-h-10 h-auto
+                min-w-100/100 w-auto
+                m-1
             ">
 
                 <!-- tail wind above explained
@@ -309,7 +414,11 @@ min-h-screen
 
                     <div id="button1" 
                     class="
-
+                    outline-2 outline-black outline-solid
+                    bg-red-500
+                    min-h-10 h-auto
+                    min-w-10 w-auto
+                    m-1
                     ">
 
                         <!-- tail wind above explained 
@@ -320,13 +429,17 @@ min-h-screen
 
 
 
-                            <label for="Button1"></label>
+                            <label for="Button1">
+                                 button 1 
+                            </label>
 
 
 
                             <!-- button with do jQuery-->
 
-                            <button id="button1" name="Button1"></button>
+                            <button id="button1" name="Button1">
+                                 button 1 
+                            </button>
 
 
 
@@ -343,7 +456,11 @@ min-h-screen
                      
                     <div id="button2" 
                     class="
-
+                    outline-2 outline-black outline-solid
+                    bg-red-500
+                    min-h-10 h-auto
+                    min-w-10 w-auto
+                    m-1
                     ">
                         <!-- tail wind above explained 
                                 tailwind
@@ -353,13 +470,17 @@ min-h-screen
 
 
 
-                            <label for="Button2"></label>
+                            <label for="Button2"> 
+                                button 2
+                            </label>
 
 
 
                             <!-- do jQuery for this later -->
 
-                            <button id="button2" name="Button2"></button>
+                            <button id="button2" name="Button2">
+                                button 2
+                            </button>
 
 
 
@@ -380,7 +501,10 @@ min-h-screen
 
             <div id="bottom2" 
             class="
-            flex items-center justify-center flex-row
+            flex items-center justify-between flex-row
+            min-h-10 h-auto
+            min-w-100/100 w-auto
+            m-1
             ">
 
                 <!-- tail wind above explained
@@ -393,7 +517,11 @@ min-h-screen
                     <!-- button(3) -->
 
                     <div class="
-
+                    outline-2 outline-black outline-solid
+                    bg-red-500
+                    min-h-10 h-auto
+                    min-w-10 w-auto
+                    m-1
                     ">
 
                         <!-- tail wind above explained 
@@ -404,13 +532,17 @@ min-h-screen
 
 
 
-                            <label for="Button3"></label>
+                            <label for="Button3">
+                                button 3
+                            </label>
 
 
 
                             <!-- button with do jQuery-->
 
-                            <button id="button3" name="Button3"></button>
+                            <button id="button3" name="Button3">
+                                button 3
+                            </button>
 
 
 
@@ -427,7 +559,11 @@ min-h-screen
                     <!-- button(4) -->
 
                     <div class="
-
+                    outline-2 outline-black outline-solid
+                    bg-red-500
+                    min-h-10 h-auto
+                    min-w-10 w-auto
+                    m-1
                     ">
 
                         <!-- tail wind above explained 
@@ -438,13 +574,17 @@ min-h-screen
 
 
 
-                            <label for="Button4"></label>
+                            <label for="Button4">
+                                button 4
+                            </label>
 
 
 
                             <!-- button with do jQuery-->
 
-                            <button id="button4" name="Button4"></button>
+                            <button id="button4" name="Button4">
+                                button 4
+                            </button>
 
 
 
