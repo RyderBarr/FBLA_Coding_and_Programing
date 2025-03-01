@@ -13,6 +13,10 @@
     <!-- tailwind link -->
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
+    <!-- jQuery link -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
     <style>
 
 
@@ -51,7 +55,7 @@ h-auto
     bg-blue-600 
     w-97/100
     min-h-10 h-auto
-    m-2
+    mt-2
     ">
 
         <!-- tail wind above explained 
@@ -230,7 +234,7 @@ h-auto
         outline-2 outline-black outline-solid
         bg-blue-500
         w-98/100 md:40/100
-        min-h-30 h-auto
+        min-h-38 h-auto
         m-1
         ">
 
@@ -245,10 +249,9 @@ h-auto
 
             <!--    | :the actual transaction info
                     v : -->
-            <div>
+            <div id="transaction">
 
-                transaction
-                info
+
 
             </div>
 
@@ -285,34 +288,35 @@ h-auto
         <!-- right side of main -->
         <div class="
         flex items-center justify-evenly flex-col
-        min-w-48/100 w-auto
+        min-w-38/100 sm:min-w-48/100 w-auto
         min-h-50 h-auto
         ">
 
 
 
-        <!--    | export 
-                v-->
+            <!--    | export 
+                    v-->
 
-        <div class="
-        outline-2 outline-black outline-solid   
-        w-96/100 
-        h-7
+            <div class="
+            outline-2 outline-black outline-solid   
+            w-96/100 
+            h-7
         
-        ">
+            ">
 
 
 
-        <!--    | export button
-                v -->
+                <!--    | export button
+                    v -->
 
-        <button>
-            buttons go here
-        </button>
+                <button class="
+                ">
+                    buttons go here
+                </button>
 
 
 
-        </div>
+            </div>
 
 
 
@@ -354,7 +358,13 @@ h-auto
         
         
                         
-                        <button> transaction example</button>
+                        <button class="transaction
+                            bg-sky-100 hover:bg-sky-400
+                            outline-black outline-1 outline-solid
+                            rounded-md
+                            
+                            m-1
+                        "> transaction example</button>
         
         
         
@@ -377,7 +387,7 @@ h-auto
         flex items-center justify-evenly flex-col
         outline-2 outline-black outline-solid
         bg-red-300
-        min-h-46 h-auto
+        min-h-60 sm:min-h-46 h-auto
         min-w-48/100 w-auto
         m-1
         text-xs
@@ -416,6 +426,8 @@ h-auto
                     class="
                     outline-2 outline-black outline-solid
                     bg-red-500
+                    flex flex-col
+                    items-center justify-center
                     min-h-10 h-auto
                     min-w-10 w-auto
                     m-1
@@ -437,8 +449,15 @@ h-auto
 
                             <!-- button with do jQuery-->
 
-                            <button id="button1" name="Button1">
-                                 button 1 
+                            <button id="button1" name="Button1"
+                            class="
+                            bg-sky-100 hover:bg-sky-400
+                            outline-black outline-1 outline-solid
+                            rounded-md
+                            px-2
+                            m-1
+                            ">
+                                 button 
                             </button>
 
 
@@ -446,8 +465,22 @@ h-auto
 
                             <!-- get the stuff from monte -->
 
-                            <form action="" method="get">
-
+                            <form action="" method="get" class="w-25 flex  flex-col items-center">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
                             </form>
 
                     </div>
@@ -458,10 +491,13 @@ h-auto
                     class="
                     outline-2 outline-black outline-solid
                     bg-red-500
+                    flex flex-col
+                    items-center justify-center
                     min-h-10 h-auto
                     min-w-10 w-auto
                     m-1
                     ">
+
                         <!-- tail wind above explained 
                                 tailwind
                                     -explained
@@ -470,24 +506,46 @@ h-auto
 
 
 
-                            <label for="Button2"> 
-                                button 2
+                            <label for="Button1">
+                                 button 1 
                             </label>
 
 
 
-                            <!-- do jQuery for this later -->
+                            <!-- button with do jQuery-->
 
-                            <button id="button2" name="Button2">
-                                button 2
+                            <button id="button1" name="Button1"
+                            class="
+                            bg-sky-100 hover:bg-sky-400
+                            outline-black outline-1 outline-solid
+                            rounded-md
+                            px-2
+                            m-1
+                            ">
+                                 button 
                             </button>
+
 
 
 
                             <!-- get the stuff from monte -->
 
-                            <form action="" method="get">
-
+                            <form action="" method="get" class="w-25 flex  flex-col items-center">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
                             </form>
 
                     </div>
@@ -519,6 +577,8 @@ h-auto
                     <div class="
                     outline-2 outline-black outline-solid
                     bg-red-500
+                    flex flex-col
+                    items-center justify-center
                     min-h-10 h-auto
                     min-w-10 w-auto
                     m-1
@@ -532,24 +592,46 @@ h-auto
 
 
 
-                            <label for="Button3">
-                                button 3
+                            <label for="Button1">
+                                 button 1 
                             </label>
 
 
 
                             <!-- button with do jQuery-->
 
-                            <button id="button3" name="Button3">
-                                button 3
+                            <button id="button1" name="Button1"
+                            class="
+                            bg-sky-100 hover:bg-sky-400
+                            outline-black outline-1 outline-solid
+                            rounded-md
+                            px-2
+                            m-1
+                            ">
+                                 button 
                             </button>
+
 
 
 
                             <!-- get the stuff from monte -->
 
-                            <form action="" method="get">
-
+                            <form action="" method="get" class="w-25 flex  flex-col items-center">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
                             </form>
 
                     </div>
@@ -561,6 +643,8 @@ h-auto
                     <div class="
                     outline-2 outline-black outline-solid
                     bg-red-500
+                    flex flex-col
+                    items-center justify-center
                     min-h-10 h-auto
                     min-w-10 w-auto
                     m-1
@@ -574,29 +658,47 @@ h-auto
 
 
 
-                            <label for="Button4">
-                                button 4
+                            <label for="Button1">
+                                 button 1 
                             </label>
 
 
 
                             <!-- button with do jQuery-->
 
-                            <button id="button4" name="Button4">
-                                button 4
+                            <button id="button1" name="Button1"
+                            class="
+                            bg-sky-100 hover:bg-sky-400
+                            outline-black outline-1 outline-solid
+                            rounded-md
+                            px-2
+                            m-1
+                            ">
+                                 button 
                             </button>
 
 
 
-                            <!-- give the stuff from monte -->
 
-                            <form action="" method="post">
+                            <!-- get the stuff from monte -->
 
-                                
-
+                            <form action="" method="get" class="w-25 flex  flex-col items-center">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
+                                <input type="text" placeholder="placeholder" class="
+                                w-25
+                                ">
                             </form>
-
-
 
                     </div>
 
@@ -624,7 +726,91 @@ h-auto
 
     </footer>
     
+<!-- jQuery script -->
+    <script>
+        $(document).ready(function(){
 
+            let eName = 'transaction 5 fry\'s'
+
+            let exp = true
+            if (exp){
+                exp = 'export'
+            }
+            else{
+                exp = 'import'
+            }
+
+            let amount = '$10.00'
+
+            let record = true
+
+            let details = 'at fry\' off of road1 and road2 at 2:00pm got bread'
+
+            let date = '02/27/25'
+
+            $('.transaction').on('click', function(event){
+                if (record){
+                    $('#transaction').append(`
+
+                    <P id="eName" class="
+                    m-1
+                    p-1
+                    outline-2 outline-solid outline-black
+                    rounded-sm
+                    bg-blue-400
+                    text-orange-900 text-center
+                    flex flex-col items-center
+                    "> ${eName} <br> ${date} <br> ${exp} </P>
+
+                    <P id="amount" class="
+                    m-1
+                    p-1
+                    outline-2 outline-solid outline-black
+                    rounded-sm
+                    bg-blue-400
+                    text-orange-900 text-center
+                    flex flex-col items-center
+                    "> ${amount} </P>
+
+                    <P id="details" class="
+                    m-1
+                    p-1
+                    outline-2 outline-solid outline-black
+                    rounded-sm
+                    bg-blue-400
+                    text-orange-900 text-center
+                    flex flex-col items-center
+                    "> ${details} </P>
+    
+                    `)
+                }
+                else{
+                    $('#transaction').append(`
+                    <P id="eName" class="
+                    m-1
+                    p-1
+                    outline-2 outline-solid outline-black
+                    rounded-sm
+                    bg-blue-400
+                    text-orange-900 text-center
+                    flex flex-col items-center
+                    "> ${eName} <br> ${date} <br> ${exp} </P>
+
+                    <P id="amount" class="
+                    m-1
+                    p-1
+                    outline-2 outline-solid outline-black
+                    rounded-sm
+                    bg-blue-400
+                    text-orange-900 text-center
+                    flex flex-col items-center
+                    "> ${amount} </P>
+                    `)
+                }
+            })
+
+        })
+    </script>
 
 </body>
 
