@@ -1,0 +1,10 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1743116972
+file.txt::TextFile/TextFile::-1::1742971473::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D/CompressedTexture2D::8028378990709461151::1742858223::1742858228::1::::<><><>0<>0<>ee3a56ccfb2c52b1f0ff2bc5a7055461<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+main.gd::GDScript/GDScript::8610576727338339206::1743033776::0::1::::<>Control<><>0<>0<><>::
+main.tscn::PackedScene::629335747602411967::1743058715::0::1::::<><><>0<>0<><>::uid://duxa68oohrxdm::::res://main.gd
+resource.gd::GDScript/GDScript::2179854568451174464::1742863316::0::1::::ButtonResource<>Resource<><>0<>0<><>::
+savefile.gd::GDScript/GDScript::3163806947935403273::1743033581::0::1::::Worm<>Resource<><>0<>0<><>::
+storage.tres::GDScript/GDScript::-1::1743033602::0::1::::<>RefCounted<><>0<>0<><>::
+::res://resources/::1742863231
