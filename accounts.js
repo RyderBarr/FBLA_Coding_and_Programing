@@ -4,16 +4,11 @@ class Account
 
 
     // variable for expences and incomes 
-        changes = [];
+        transaction = [
 
-    // balance variable
-        balance = 0;
+            'example transaction':[]
 
-    //incomelist
-        incomeList = [];
-
-    //expenselist
-        expenseList = [];
+        ];
 
     
 
