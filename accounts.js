@@ -89,11 +89,7 @@ class Account
 
         }
     
-<<<<<<< Updated upstream
     // adds an income to the users account
-=======
-    // adds an income to the users account 
->>>>>>> Stashed changes
         income ( amount = 0 , details = "", record = false , date = "" , eName = "" )
         {
 
@@ -165,12 +161,7 @@ class Account
 
         }
 
-
-<<<<<<< Updated upstream
     // i is the index number of the change that the user wants to delete 
-=======
-    // i is the index number of the change that the user wants to delete
->>>>>>> Stashed changes
         deleteChange( i = 0 ){
             
             if( i > -1 )
@@ -183,101 +174,8 @@ class Account
 
         }
 
-<<<<<<< Updated upstream
-    // this is the same as deleteChange but it is by name 
-=======
-    // this is the same as deleteChange but it is by name
->>>>>>> Stashed changes
-        incomeDeleteChange( eName = "" ){
-
-            // this is for loop to look through the changes
-                Deletefor:for ( let i of this.changes )
-                {
-    
-<<<<<<< Updated upstream
-                    // if the change that the loop is on, has the name inputed in is on the change  
-=======
-                    // if the change that the loop is on, has the name inputed in is on the change 
->>>>>>> Stashed changes
-                        setDelete:if ( i.includes( eName = "" ) )
-                        {
-
-                            if( i > -1 )
-                            {
-                    
-                                // cuts out the i entered from the changes array
-                                    this.changes.splice( i-1 , i );
-                    
-                            }
-                    
-                        }
-    
-                }
-
-        }
-
-    // the same as above but instead it is replaceing information rather then deleting
-        incomeUpdateChange( eName , amount , nEName , date )
-        {
-
-            updateFor:for ( let i of changes )
-            {
-
-                setUpdate:if (i.includes(eName))
-                {
-
-                    this.incomeList[0] = "no details";
-                    this.incomeList[1] = date;
-                    this.incomeList[2] = " + ";
-                    this.incomeList[3] = amount;
-
-<<<<<<< Updated upstream
-                    amountCheck:switch(true)
-                    {
-
-                        // if amount is less then 10 then add "tiny" income" to incomeList then break out of the switch
-                            case amount < 10:
-                                this.incomeList[4] = "tiny income";
-                                break;
-
-                        // if amount is less then 30 then add "small income" to incomeList then break out of the switch
-                            case amount < 30:
-                                this.incomeList[4] = "small income";
-                                break;
-
-                        // if amount is less then 60 then add :normal income" to incomeList then break out of the switch
-                            case amount < 60:
-                                this.incomeList[4] = "normal income";
-                                break;
-
-                        // if amount is less then 100 then add "big income" to incomeList then break out of the switch
-                            case amount < 100:
-                                this.incomeList[4] = "big income";
-                                break;
-
-                        // if amount is less then 500 then add "large income" to incomeList then break out of the switch
-                            case amount < 500:
-                                this.incomeList [4] = "large income";
-                                break;
-
-                        // if it reaches here add "huge income" to incomeList
-                            default:
-                                this.incomeList[4] = "huge income";    
-                    }
-
-                    this.changes.push(`${nEName} : ${this.incomeList}`);
-=======
-                    this.changes.push(`${nEName} : ${this.expenseList}`);
->>>>>>> Stashed changes
-
-                }
-
-            }
-
-        }
-
     // this is the same as incomeDeleteChange but for expense 
-        expenseDeleteChange( eName ){
+        DeleteChangeName( eName ){
 
             // this is for loop to look through the changes
             Deletefor:for ( let i of changes )
@@ -297,7 +195,7 @@ class Account
         }
 
     // the same as above but instead it is replaceing information rather then deleting
-        expenseUpdateChange( eName , amount , nEName , date ){
+        UpdateChange( eName , amount , nEName , date ){
 
             updateFor:for ( let i of changes )
             {
@@ -310,43 +208,6 @@ class Account
                     this.expenseList[2] = " - ";
                     this.expenseList[3] = amount;
 
-<<<<<<< Updated upstream
-                    amountCheck:switch(true)
-                    {
-
-                        // if amount is less then 10 then add "tiny" expense" to expenseList then break out of the switch
-                            case amount < 10:
-                                this.expenseList[4] = "tiny expense";
-                                break;
-
-                        // if amount is less then 30 then add "small expense" to expenseList then break out of the switch
-                            case amount < 30:
-                                this.expenseList[4] = "small expense";
-                                break;
-
-                        // if amount is less then 60 then add :normal expense" to expenseList then break out of the switch
-                            case amount < 60:
-                                this.expenseList[4] = "normal expense";
-                                break;
-
-                        // if amount is less then 100 then add "big expense" to expenseList then break out of the switch
-                            case amount < 100:
-                            this.expenseList[4] = "big expense";
-                                break;
-
-                        // if amount is less then 500 then add "large expense" to expenseList then break out of the switch
-                            case amount < 500:
-                                this.expenseList[4] = "large expense";
-                                break;
-
-                        // if it reaches here add "huge expense" to expenseList
-                            default:
-                                this.expenseList[4] = "huge expense"; 
-
-                    }
-
-=======
->>>>>>> Stashed changes
                     this.changes.push(`${nEName} : ${this.expenseList}`);
 
                 }
