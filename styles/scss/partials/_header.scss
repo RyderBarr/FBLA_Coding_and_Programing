@@ -1,5 +1,10 @@
-html {height: 100%;}
+/*
+    This is a partial scss that is imported into almost every scss file.
+    It creates the styling for the header and nav bar that appears on most
+    of the pages. It also does all the media queries for them.
+*/
 
+html {height: 100%;}
 body {
     height: 100%;
     background-color: #F5F5E5;
@@ -7,9 +12,10 @@ body {
     margin: 0;
 }
 
+// Header styling
 header {
     width: 100%;
-    background-color: #15ce65;
+    background-image: linear-gradient(270deg, lightgreen, #15ce65, green);
     border-bottom: 1rem solid #cec115;
     padding: 0.5rem 0;
     display: flex;
@@ -19,6 +25,10 @@ header {
     div {
         width: 20%;
         text-align: center;
+        .business-logo {
+            width: 75%;
+            border-radius: 100%;
+        }
         h1 {
             font-size: 3rem;
             font-weight: 900;
@@ -26,6 +36,7 @@ header {
     }
 }
 
+// Nav styling
 nav {
     width: 60%;
     display: flex;
@@ -38,6 +49,8 @@ nav {
         &:hover {color: #fe959e;}
     }
 }
+
+// Media queries
 
 @media screen and (max-width: 1200px) {
     header {
