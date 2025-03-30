@@ -48,10 +48,11 @@
                 Object.keys(history).forEach( key =>
                 {
 
+                    let transaction = history[key]
+
                     Object.keys(transaction).forEach( key => 
                     {
 
-                        let transaction = history[key]
 
                         if(transaction[key] == 'id'){
 
@@ -87,6 +88,84 @@
 
     }
 
+// create transaction 
+    function createTransaction(obj=database, id=1, amount=100, date='9/11/01', Ename='attack', record=false, details='')
+    {
+
+        Object.keys(obj).forEach( key => {
+
+            let user = obj[key] 
+
+            let isID = false
+            Object.keys(user).forEach( key => {
+
+                // console.log(key)
+                let history = user[key]
+                if(key == 'id' && user[key] == id)
+                {
+
+                    isID = true
+
+                }
+
+                if(isID)
+                {
+
+                    if( key = 'history')
+                    {
+
+                        
+                        let userID = 0;
+                        let userIDUpdated = false
+                        
+                        Object.keys(history).forEach( key => {
+
+                            let transaction = history[key]
+                            Object.keys(transaction).forEach( key => {
+                               
+                                if (key = 'id')
+                                {
+                                    
+                                    if (transaction[key] > userID )
+                                    {
+
+                                        userIDUpdated = true
+                                        userID = transaction[key]
+        
+                                    }
+                                
+                                }
+
+                            })
+
+                        })
+                        
+                        if(userIDUpdated){
+                            let transactionName = `transaction${userID+2}`
+                            let newTransaction = {
+                                [transactionName]:{
+                                    id:userID+1,    
+                                    amount:amount,
+                                    date:date,
+                                    Ename:Ename,
+                                    record:record,
+                                    details:details,
+                                }
+                            }
+                            Object.assign(history, newTransaction)
+                        }
+                        userIDUpdated = false
+                        
+                    }
+
+                }
+                
+            })
+            isID = false
+
+        })
+
+    }
 // test data base 
     database = {
 
@@ -157,10 +236,10 @@
 
             history:{
         
-                transaction4:
+                transaction1:
                 {
                         
-                    id:3,    
+                    id:0,    
                     amount:1000,
                     date:'09/83/56',
                     Ename:'4',
@@ -169,10 +248,10 @@
         
                 },
 
-                transaction5:
+                transaction2:
                 {
                         
-                    id:4,    
+                    id:1,    
                     amount:1,
                     date:'01/01/01',
                     Ename:'5',
@@ -181,10 +260,10 @@
         
                 },
 
-                transaction6:
+                transaction3:
                 {
                         
-                    id:5,    
+                    id:2,    
                     amount:-5645674,
                     date:'120/245633/276',
                     Ename:'6',
@@ -202,5 +281,8 @@
 // test code
     // getUserID('admin', 'admin1');console.log(gotUserID)
 
-    changeTransactionBuyID(1,0)
+    // changeTransactionBuyID(1,0)
+
+    createTransaction()
+    console.log(database)
 
