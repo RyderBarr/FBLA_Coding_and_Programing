@@ -1,19 +1,92 @@
 
 // gets the id of the user
+    let gotUserID
     function getUserID(username, password)
     {
+
+        let isUserName = false;
+        let isPassword = false;
+        let tempID = 0;
+
         Object.keys(database).forEach( key =>
-            {
-                console.log(key + 'value' + database[key])
-            }
-        ) 
+        {
+                let user = database[key]
+                Object.keys(user).forEach( key =>
+                {
+                   
+                    
+                    if (key == 'userName' && user[key] == username){isUserName = true}
+
+                    if (key == 'password' && user[key] == password){isPassword = true}
+
+                    if (key == 'id'){tempID = user[key]}
+
+                })
+
+            if(isPassword && isUserName){gotUserID = tempID}
+            isPassword = false
+            isUserName = false
+
+        })
 
     }
 
-    function changeTransaction(id)
+// change a transaction
+    function changeTransactionBuyID(userID, id, newName=null, amount=null, date=null, record=null, details=null)
     {
-        return null
+        let isID = false;
+        Object.keys(database).forEach( key =>
+        {
+
+
+            let user = database[key]
+            Object.keys(user).forEach( key =>
+            {
+
+                let history = user[key]
+
+                Object.keys(history).forEach( key =>
+                {
+
+                    Object.keys(transaction).forEach( key => 
+                    {
+
+                        let transaction = history[key]
+
+                        if(transaction[key] == 'id'){
+
+                            
+
+                        }                           
+                        
+                    })
+
+                })
+    
+            })
+    
+        })
+
     }
+
+// change a transaction
+    function changeTransactionBuyName(userID, Name, newName=null, amount=null, date=null, record=null, details=null)
+    {
+        
+    }
+
+// save a transaction
+    function saveTransaction(newName=null, amount=null, date=null, record=null, details=null)
+    {
+
+    }
+
+// create new user
+    function newUser(firstname, lastname, password, username, balanced, phone, email)
+    {
+
+    }
+
 // test data base 
     database = {
 
@@ -127,5 +200,7 @@
     };
 
 // test code
+    // getUserID('admin', 'admin1');console.log(gotUserID)
 
-    console.log(getUserID('admin','admin1'))
+    changeTransactionBuyID(1,0)
+
