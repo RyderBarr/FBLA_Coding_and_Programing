@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Downloads/FBLA_Coding_and_Programing/read"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "FBLA_Coding_and_Programing"
+	}
+}
