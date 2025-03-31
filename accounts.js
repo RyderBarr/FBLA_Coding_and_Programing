@@ -1,16 +1,16 @@
 
 // gets the id of the user
-    let gotnewID
-    function getnewID(username, password)
+    let gotUserID
+    function getnewID(obj=database, username, password)
     {
 
         let isUserName = false;
         let isPassword = false;
         let tempID = 0;
 
-        Object.keys(database).forEach( key =>
+        Object.keys(obj).forEach( key =>
         {
-                let user = database[key]
+                let user = obj[key]
                 Object.keys(user).forEach( key =>
                 {
                    
@@ -23,13 +23,111 @@
 
                 })
 
-            if(isPassword && isUserName){gotnewID = tempID}
+            if(isPassword && isUserName){gotUserID = tempID}
             isPassword = false
             isUserName = false
 
         })
 
-    }
+        // goes through all the users in the database
+            Object.keys(database).forEach( key => {
+                
+                let User = database[key]    
+
+                // goes through all the users data
+                    Object.keys(User).forEach( key => {
+                
+                        // if the username is the same as the one entered
+                            if(key == 'userName' && User[key] == username)
+                            {
+
+                                usernameRight = true;
+ 
+                    
+                            }
+
+                        // if the password is the same as the one entered
+                            if(key == 'password' && User[key] == password)
+                            {
+
+                                passwordRight = true;
+
+                            }
+
+                        // sets the temperary id variable to the id of the user
+                            if(key == 'id')
+                            {
+
+                                ID = User[key];
+
+                            }
+                
+                    })
+            
+                // if the password and username are right the id is saved outside of the function 
+                    if(passwordRight && usernameRight)
+                    {
+
+                        gotUserID = ID
+
+                    }
+
+                // reseting varibles
+                    passwordRight = false
+                    usernameRight = false
+                    ID = 0
+
+            })
+
+    }  
+
+// deletes a transaction needs work
+    function deleteTransaction(obj=database, id, userID)
+    {
+
+        // goes through all the users in the database
+            Object.keys(obj).forEach( key => {
+
+                let User = obj[key]    
+
+                // goes through all the users data
+                    Object.keys(User).forEach( key => {
+
+                        // if the key is history
+                            if(key == 'history')
+                            {
+
+                                let history = User[key]
+
+                                // goes through all the transaction history
+                                    Object.keys(history).forEach( key=> {
+
+                                        let transaction = history[key]
+
+                                        // goes through all the data in the transaction
+                                            Object.keys(transaction).forEach( key => {
+
+                                                // if the transaction = key 
+                                                    if ( key == 'id' && transaction[key] == id )
+                                                    {
+                                                        console.log(history)
+                                                        // deletes the transaction
+                                                            delete history.transaction
+                                                        console.log(history)
+                                                    }
+
+                                            })
+                                    
+                                    })
+                        
+                            }
+            
+                        
+                    })
+
+            })
+        
+    }    
 
 // change a transaction
     function changeTransactionBuyID(obj=database,transactionID=1, id=1, newName=null, amount=null, date=null, record=null, details=null)
@@ -551,3 +649,13 @@
         },
 
     };
+
+// test
+
+    // works
+    // getnewID(database, 'admin', 'admin1')
+    // console.log(gotUserID)
+
+    // 
+    deleteTransaction(database, id, userID)
+
