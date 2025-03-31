@@ -1,19 +1,118 @@
 
 // gets the id of the user
+    let gotUserID
+
+// get user ID is the function that gets the user id after 
     function getUserID(username, password)
     {
-        Object.keys(database).forEach( key =>
-            {
-                console.log(key + 'value' + database[key])
-            }
-        ) 
+        
+        let passwordRight = false;
+        let usernameRight = false;
+        let ID = 0;
 
-    }
+        // goes through all the users in the database
+            Object.keys(database).forEach( key => {
+                
+                let User = database[key]    
 
-    function changeTransaction(id)
+                // goes through all the users data
+                    Object.keys(User).forEach( key => {
+                
+                        // if the username is the same as the one entered
+                            if(key == 'userName' && User[key] == username)
+                            {
+
+                                usernameRight = true;
+ 
+                    
+                            }
+
+                        // if the password is the same as the one entered
+                            if(key == 'password' && User[key] == password)
+                            {
+
+                                passwordRight = true;
+
+                            }
+
+                        // sets the temperary id variable to the id of the user
+                            if(key == 'id')
+                            {
+
+                                ID = User[key];
+
+                            }
+                
+                    })
+            
+                // if the password and username are right the id is saved outside of the function 
+                    if(passwordRight && usernameRight)
+                    {
+
+                        gotUserID = ID
+
+                    }
+
+                // reseting varibles
+                    passwordRight = false
+                    usernameRight = false
+                    ID = 0
+
+            })
+
+    }  
+
+// deletes a transaction 
+    function deleteTransaction(id)
     {
-        return null
+
+        // goes through all the users in the database
+            Object.keys(database).forEach( key => {
+
+                let User = database[key]    
+
+                // goes through all the users data
+                    Object.keys(User).forEach( key => {
+
+                        // if the key is history
+                            if(key == 'history')
+                            {
+
+                                let tranHist = User[key]
+
+                                // goes through all the transaction history
+                                    Object.keys(tranHist).forEach( key=> {
+
+                                        let tran = tranHist[key]
+
+                                        // goes through all the data in the transaction
+                                            Object.keys(tran).forEach( key => {
+
+                                                // if the transaction = key 
+                                                    if ( key == 'id' && tran[key] == id )
+                                                    {
+                                                    
+                                                        // deletes the transaction
+                                                            delete tranHist.tran
+                                            
+                                                    }
+
+                                            })
+                                    
+                                    })
+                        
+                            }
+            
+                        
+                    })
+
+            })
+        
     }
+
+// change a transaction - this is what im working on
+    function changeTransaction(id, newName=null , newAmount = null, )
+    
 // test data base 
     database = {
 
@@ -127,5 +226,6 @@
     };
 
 // test code
+    // getUserID('admin','admin1');console.log(gotUserID)
 
-    console.log(getUserID('admin','admin1'))
+    deleteTransaction(0)
