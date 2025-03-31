@@ -1,14 +1,33 @@
 
 // gets the id of the user
     let gotUserID
-
-// get user ID is the function that gets the user id after 
-    function getUserID(username, password)
+    function getnewID(obj=database, username, password)
     {
-        
-        let passwordRight = false;
-        let usernameRight = false;
-        let ID = 0;
+
+        let isUserName = false;
+        let isPassword = false;
+        let tempID = 0;
+
+        Object.keys(obj).forEach( key =>
+        {
+                let user = obj[key]
+                Object.keys(user).forEach( key =>
+                {
+                   
+                    
+                    if (key == 'userName' && user[key] == username){isUserName = true}
+
+                    if (key == 'password' && user[key] == password){isPassword = true}
+
+                    if (key == 'id'){tempID = user[key]}
+
+                })
+
+            if(isPassword && isUserName){gotUserID = tempID}
+            isPassword = false
+            isUserName = false
+
+        })
 
         // goes through all the users in the database
             Object.keys(database).forEach( key => {
@@ -63,56 +82,417 @@
     }  
 
 // deletes a transaction 
-    function deleteTransaction(id)
+        
+
+// change a transaction
+    function changeTransactionBuyID(obj=database,transactionID=1, id=1, newName=null, amount=null, date=null, record=null, details=null)
+    {
+            // iterates through all the keys of the obj
+                Object.keys(obj).forEach( key => {
+
+                    let user = obj[key] 
+    
+                    // a varible to check if the user is the correct user
+                        let isID = false
+    
+                    // iterates through the user data
+                        Object.keys(user).forEach( key => {
+    
+                            let history = user[key]
+    
+                            // gets to the users id and checks if this user is the user by id
+                                if(key == "id")
+                                {
+
+                                    if(user[key] == id)
+                                    {
+                                        isID = true
+
+                                    }
+                                    
+                                }
+                            // if this is the ID 
+                                if(isID)
+                                {
+                                    
+                                    // and if we are in history
+                                    if( key == 'history')
+                                    {
+
+                                        // iterates through history 
+                                            Object.keys(history).forEach( key => {
+    
+                                                let transaction = history[key]
+                                                
+                                                // to check is at the proper transation
+                                                let isTransaction = false
+
+                                                // iterates through a transaction
+                                                    Object.keys(transaction).forEach( key => {
+                                                    
+                                                        // if we are looking at the right id
+                                                        
+                                                            if (key == 'id' && transaction[key] == transactionID)
+                                                            {
+                                                                
+                                                                isTransaction = true
+                                                            
+                                                            }
+
+                                                            if(isTransaction)
+                                                            {
+
+                                                                if(key == 'Ename' && newName != null)
+                                                                {
+
+                                                                    transaction[key] = newName
+                                                                    console.log(transaction[key])
+                                                                }
+
+                                                                if(key == 'amount' && amount != null)
+                                                                {
+
+                                                                    transaction[key] = amount
+
+                                                                }
+                                                                
+                                                                if(key == 'date' && newName != null)
+                                                                {
+
+                                                                    transaction[key] = date
+
+                                                                }
+
+                                                                if(key == 'record' && record != null)
+                                                                {
+
+                                                                    transaction[key] = record
+
+                                                                }
+
+                                                                if(key == 'details' && details != null)
+                                                                {
+
+                                                                    transaction[key] = details
+
+                                                                }
+                                                                   
+                                                            }
+    
+                                                    })
+
+                                                isTransaction = false
+    
+                                            })
+                                        
+                                    }
+    
+                                }
+                            
+                        })
+    
+                    // resettes the id check 
+                        isID = false
+    
+                })
+
+    }
+
+// change a transaction
+    function changeTransactionBuyName(obj=database, id=1, Name='2', newName=null, amount=null, date=null, record=null, details=null)
     {
 
-        // goes through all the users in the database
-            Object.keys(database).forEach( key => {
+        // iterates through all the keys of the obj
+        Object.keys(obj).forEach( key => {
 
-                let User = database[key]    
+            let user = obj[key] 
 
-                // goes through all the users data
-                    Object.keys(User).forEach( key => {
+            // a varible to check if the user is the correct user
+                let isID = false
 
-                        // if the key is history
-                            if(key == 'history')
+            // iterates through the user data
+                Object.keys(user).forEach( key => {
+
+
+                    let history = user[key]
+
+                    // gets to the users id and checks if this user is the user by id
+                        if(key == "id")
+                        {
+
+                            if(user[key] == id)
+                            {
+                                isID = true
+
+                            }
+                            
+                        }
+                    // if this is the ID 
+                        if(isID)
+                        {
+                            
+                            // and if we are in history
+                            if( key == 'history')
                             {
 
-                                let tranHist = User[key]
+                                // iterates through history 
+                                    Object.keys(history).forEach( key => {
 
-                                // goes through all the transaction history
-                                    Object.keys(tranHist).forEach( key=> {
+                                        let transaction = history[key]
+                                        
+                                        // to check is at the proper transation
+                                        let isTransaction = false
 
-                                        let tran = tranHist[key]
-
-                                        // goes through all the data in the transaction
-                                            Object.keys(tran).forEach( key => {
-
-                                                // if the transaction = key 
-                                                    if ( key == 'id' && tran[key] == id )
-                                                    {
-                                                    
-                                                        // deletes the transaction
-                                                            delete tranHist.tran
+                                        // iterates through a transaction
+                                            Object.keys(transaction).forEach( key => {
                                             
+                                                // if we are looking at the right id
+                                                
+                                                    if (key == 'Ename' && transaction[key] == Name)
+                                                    {
+                                                        
+                                                        isTransaction = true
+                                                    
+                                                    }
+
+                                                    if(isTransaction)
+                                                    {
+
+                                                        if(key == 'Ename' && newName != null)
+                                                        {
+
+                                                            transaction[key] = newName
+
+                                                        }
+
+                                                        if(key == 'amount' && amount != null)
+                                                        {
+
+                                                            transaction[key] = amount
+
+                                                        }
+                                                        
+                                                        if(key == 'date' && newName != null)
+                                                        {
+
+                                                            transaction[key] = date
+
+                                                        }
+
+                                                        if(key == 'record' && record != null)
+                                                        {
+
+                                                            transaction[key] = record
+
+                                                        }
+
+                                                        if(key == 'details' && details != null)
+                                                        {
+
+                                                            transaction[key] = details
+
+                                                        }
+                                                           
                                                     }
 
                                             })
-                                    
+
+                                        isTransaction = false
+
                                     })
-                        
+                                
                             }
-            
-                        
+
+                        }
+                    
+                })
+
+            // resettes the id check 
+                isID = false
+
+        })
+
+    }
+
+// create new user
+    function newUser(obj=database, firstname='john', lastname='doe', Password='A0000!', username='johnDoe', Balanced=0, Phone='000-000-0000', Email='johnDoe@gmail.com')
+    {
+
+        let newID = 0;
+                                    
+        // a check for is the new ID is updated
+            let newIDUpdated = false
+        
+        // iterates through obj 
+            Object.keys(obj).forEach( key => {
+
+                let user = obj[key]
+                
+                // iterates through a user
+                    Object.keys(user).forEach( key => {
+                    
+                        // if we are looking at the id
+                            if (key == 'id')
+                            {
+                                
+                                // if the id is greater the newID
+                                    if (user[key] > newID )
+                                    {
+
+                                        // set update to true
+                                            newIDUpdated = true
+                                        
+                                        // sets new ID to the bigger id 
+                                            newID = user[key]
+        
+                                    }
+                            
+                            }
+
                     })
 
             })
         
+        // sees if the new ID was updated
+            if(newIDUpdated){
+        
+                let userName = `exampleUser${newID+1}`
+
+                // creates the new user
+                    let User = {
+                        [userName]:{
+                            id:newID+1,
+                            firstName:firstname,
+                            lastName:lastname,
+                            userName:username,
+                            password:Password,
+                            balance:Balanced,
+                            phone:Phone,
+                            email:Email,
+                            history:{
+                                transaction1:{   
+                                    id:0,
+                                }
+                            },
+                        }
+                    }
+                    console.log(User)
+
+                // addes the new transaction to the history
+                    Object.assign(obj, User)
+            }
+
+            console.log(obj)
+        
+        // resets the check
+            newIDUpdated = false
+        
     }
 
-// change a transaction - this is what im working on
-    function changeTransaction(id, newName=null , newAmount = null, )
-    
+// create transaction 
+    function createTransaction(obj=database, id=1, amount=100, date='9/11/01', Ename='attack', record=false, details='')
+    {
+        // iterates through all the keys of the obj
+            Object.keys(obj).forEach( key => {
+
+                let user = obj[key] 
+
+                // a varible to check if the user is the correct user
+                    let isID = false
+
+                // iterates through the user data
+                    Object.keys(user).forEach( key => {
+
+                        let history = user[key]
+
+                        // gets to the users id and checks if this user is the user by id
+                            if(key == 'id' && user[key] == id)
+                            {
+
+                                isID = true
+
+                            }
+
+                        // if this is the ID 
+                            if(isID)
+                            {
+
+                                // and if we are in history
+                                if( key == 'history')
+                                {
+
+                                    let newID = 0;
+                                    
+                                    // a check for is the new ID is updated
+                                        let newIDUpdated = false
+                                    
+                                    // iterates through history 
+                                        Object.keys(history).forEach( key => {
+
+                                            let transaction = history[key]
+                                            
+                                            // iterates through a transaction
+                                                Object.keys(transaction).forEach( key => {
+                                                
+                                                    // if we are looking at the id
+                                                        if (key == 'id')
+                                                        {
+                                                            
+                                                            // if the id is greater the newID
+                                                                if (transaction[key] > newID )
+                                                                {
+
+                                                                    // set update to true
+                                                                        newIDUpdated = true
+                                                                    
+                                                                    // sets new ID to the bigger id 
+                                                                        newID = transaction[key]
+                                    
+                                                                }
+                                                        
+                                                        }
+
+                                                })
+
+                                        })
+                                    
+                                    // sees if the new ID was updated
+                                        if(newIDUpdated){
+                                    
+                                            let transactionName = `transaction${newID+2}`
+
+                                            // creates the new transaction
+                                                let newTransaction = {
+                                                    [transactionName]:{
+                                                        id:newID+1,    
+                                                        amount:amount,
+                                                        date:date,
+                                                        Ename:Ename,
+                                                        record:record,
+                                                        details:details,
+                                                    }
+                                                }
+
+                                            // addes the new transaction to the history
+                                                Object.assign(history, newTransaction)
+                                        }
+                                    
+                                    // resets the check
+                                        newIDUpdated = false
+                                    
+                                }
+
+                            }
+                        
+                    })
+
+                // resettes the id check 
+                    isID = false
+
+            })
+
+    }
+
 // test data base 
     database = {
 
@@ -183,10 +563,10 @@
 
             history:{
         
-                transaction4:
+                transaction1:
                 {
                         
-                    id:3,    
+                    id:0,    
                     amount:1000,
                     date:'09/83/56',
                     Ename:'4',
@@ -195,10 +575,10 @@
         
                 },
 
-                transaction5:
+                transaction2:
                 {
                         
-                    id:4,    
+                    id:1,    
                     amount:1,
                     date:'01/01/01',
                     Ename:'5',
@@ -207,10 +587,10 @@
         
                 },
 
-                transaction6:
+                transaction3:
                 {
                         
-                    id:5,    
+                    id:2,    
                     amount:-5645674,
                     date:'120/245633/276',
                     Ename:'6',
@@ -224,8 +604,3 @@
         },
 
     };
-
-// test code
-    // getUserID('admin','admin1');console.log(gotUserID)
-
-    deleteTransaction(0)

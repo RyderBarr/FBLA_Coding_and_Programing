@@ -293,7 +293,7 @@ h-auto
             <div class="
             outline-2 outline-black outline-solid   
             w-96/100 
-            h-7
+            h-auto
         
             ">
 
@@ -302,11 +302,58 @@ h-auto
                 <!--    | export button
                     v -->
 
-                <button class="
+<!-- monte your button is here -->
+                <form action="" method="post" class="
+                flex
+                flex-col
+                justify-evenly
                 ">
-                    buttons go here
-                </button>
+                    <input type="text" placeholder="Transaction name goes here" class="outline-1 outline-black outline-solid m-1">
 
+                    <input type="number" placeholder="Transaction amount goes here" class="outline-1 outline-black outline-solid m-1">
+
+                    <input type="date" placeholder="Transaction date goes here" class="outline-1 outline-black outline-solid m-1">
+
+                    <div 
+                    class="
+                    flex
+                    flex-row
+                    justify-evenly
+                    m-1
+                    ">
+
+                        <div class="
+                        flex
+                        flex-col
+                        m-1
+                        ">
+                            record
+                            <input id="record" type="radio"class="outline-1 outline-black outline-solid">
+                        </div>
+
+                        <div class="
+                        flex
+                        flex-col
+                        m-1
+                        ">
+                            don't record
+                            <input id="dontRecord" type="radio"class="outline-1 outline-black outline-solid">
+                        </div>
+
+                    </div>
+
+                    <input type="text" placeholder="Transaction details" class="outline-1 outline-black outline-solid m-1">
+
+                    <button type="submit" class="
+                    addTransaction
+                    bg-sky-100 hover:bg-sky-400
+                    outline-black outline-1 outline-solid
+                    rounded-sm
+                    
+                    m-1
+                    "> add transaction </button>
+                </form>
+<!-- monte your button is here -->
 
 
             </div>
@@ -575,34 +622,7 @@ h-auto
     <script>
         $(document).ready(function(){
 
-            // test values
-                let eName = 'transaction 5 fry\'s'
-
-                let exp = true
-
-                if (exp)
-                {
-
-                    exp = 'export'
-
-                }
-
-                else
-                {
-
-                    exp = 'import'
-
-                }
-
-                let amount = '$10.00'
-
-                let record = true
-
-                let details = 'at fry\' off of road1 and road2 at 2:00pm got bread'
-
-                let date = '02/27/25'
-
-            $('.transaction').on('click', function(event)
+            function addATransaction(record, eName, date, amount, details)
             {
                 if (record)
                 {
@@ -616,7 +636,7 @@ h-auto
                     bg-blue-400
                     text-orange-900 text-center
                     flex flex-col items-center
-                    "> ${eName} <br> ${date} <br> ${exp} </P>
+                    "> ${eName} <br> ${date} </P>
 
                     <P id="amount" class="
                     m-1
@@ -651,7 +671,7 @@ h-auto
                     bg-blue-400
                     text-orange-900 text-center
                     flex flex-col items-center
-                    "> ${eName} <br> ${date} <br> ${exp} </P>
+                    "> ${eName} <br> ${date}</P>
 
                     <P id="amount" class="
                     m-1
@@ -664,6 +684,21 @@ h-auto
                     "> ${amount} </P>
                     `)
                 }
+            }
+
+           // test values
+                let eName = 'transaction 5 fry\'s'
+
+                let amount = '$10.00'
+
+                let record = true
+
+                let details = 'at fry\' off of road1 and road2 at 2:00pm got bread'
+
+                let date = '02/27/25'
+
+            $('.transaction').on('click',function(event){
+                addATransaction(record, eName, date, amount, details)
             })
 
         })
