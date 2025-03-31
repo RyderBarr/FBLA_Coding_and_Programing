@@ -81,8 +81,53 @@
 
     }  
 
-// deletes a transaction 
+// deletes a transaction needs work
+    function deleteTransaction(obj=database, id, userID)
+    {
+
+        // goes through all the users in the database
+            Object.keys(obj).forEach( key => {
+
+                let User = obj[key]    
+
+                // goes through all the users data
+                    Object.keys(User).forEach( key => {
+
+                        // if the key is history
+                            if(key == 'history')
+                            {
+
+                                let history = User[key]
+
+                                // goes through all the transaction history
+                                    Object.keys(history).forEach( key=> {
+
+                                        let transaction = history[key]
+
+                                        // goes through all the data in the transaction
+                                            Object.keys(transaction).forEach( key => {
+
+                                                // if the transaction = key 
+                                                    if ( key == 'id' && transaction[key] == id )
+                                                    {
+                                                        console.log(history)
+                                                        // deletes the transaction
+                                                            delete history.transaction
+                                                        console.log(history)
+                                                    }
+
+                                            })
+                                    
+                                    })
+                        
+                            }
+            
+                        
+                    })
+
+            })
         
+    }    
 
 // change a transaction
     function changeTransactionBuyID(obj=database,transactionID=1, id=1, newName=null, amount=null, date=null, record=null, details=null)
@@ -604,3 +649,13 @@
         },
 
     };
+
+// test
+
+    // works
+    // getnewID(database, 'admin', 'admin1')
+    // console.log(gotUserID)
+
+    // 
+    deleteTransaction(database, id, userID)
+
