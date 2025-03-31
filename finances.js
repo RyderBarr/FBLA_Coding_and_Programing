@@ -10,14 +10,16 @@ var finances = [
 
 // runs when document is loaded, attaching the event to the newcost button.
 $(document).ready(function() {
-    var tablerow = $("<tr>", {id: "row" + rows})
-    finances[0] = localStorage.getItem("finance")
-    $("#Table").append(tablerow)
-    for(i of finances){
-        tablerow.append(i.Expenditure[0])
-        tablerow.append(i.Date[0])
-        tablerow.append(i.Quantity[0])
-        tablerow.append(i.Cost[0])
+    if (localStorage.getItem("finance") != null){
+        var tablerow = $("<tr>", {id: "row" + rows})
+        finances[0] = localStorage.getItem("finance")
+        $("#Table").append(tablerow)
+        for(i in finances){
+            tablerow.append(i.Expenditure[0])
+            tablerow.append(i.Date[0])
+            tablerow.append(i.Quantity[0])
+            tablerow.append(i.Cost[0])
+        }
     }
     $("#NewCost").click(function(){
         rows++
@@ -43,6 +45,11 @@ $(document).ready(function() {
         localStorage.setItem("finance", finances[0])
     })
 
+    $("#myForm").on("click", function(){
+        console.log("AAAAa")
+        let data = $("#form").serializeArray()
+        console.log(JSON.stringify(data))
+    })
 })
 
 // called when we add a new expense. links the delete button to the delete function. when pressed, deletes the table row its connected to. 
@@ -55,3 +62,4 @@ function eventassign(){
         })
     })
 }
+
