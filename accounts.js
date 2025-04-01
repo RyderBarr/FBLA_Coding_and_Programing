@@ -130,7 +130,7 @@
     }    
 
 // change a transaction
-    function changeTransactionBuyID(obj=database,transactionID=1, id=1, newName=null, amount=null, date=null, record=null, details=null)
+    function changeTransactionBuyID(obj=database,transactionID=1, id=1, newName=null, amount=null, date=null, details=null)
     {
             // iterates through all the keys of the obj
                 Object.keys(obj).forEach( key => {
@@ -208,13 +208,6 @@
 
                                                                 }
 
-                                                                if(key == 'record' && record != null)
-                                                                {
-
-                                                                    transaction[key] = record
-
-                                                                }
-
                                                                 if(key == 'details' && details != null)
                                                                 {
 
@@ -244,7 +237,7 @@
     }
 
 // change a transaction
-    function changeTransactionBuyName(obj=database, id=1, Name='2', newName=null, amount=null, date=null, record=null, details=null)
+    function changeTransactionBuyName(obj=database, id=1, Name='2', newName=null, date=null, details=null)
     {
 
         // iterates through all the keys of the obj
@@ -321,13 +314,6 @@
                                                         {
 
                                                             transaction[key] = date
-
-                                                        }
-
-                                                        if(key == 'record' && record != null)
-                                                        {
-
-                                                            transaction[key] = record
 
                                                         }
 
@@ -435,7 +421,7 @@
     }
 
 // create transaction 
-    function createTransaction(obj=database, id=1, amount=100, date='9/11/01', Ename='attack', record=false, details='')
+    function createTransaction( id=1, amount=100, date='9/11/01', Ename='attack', details='', obj=database)
     {
         // iterates through all the keys of the obj
             Object.keys(obj).forEach( key => {
@@ -513,7 +499,6 @@
                                                         amount:amount,
                                                         date:date,
                                                         Ename:Ename,
-                                                        record:record,
                                                         details:details,
                                                     }
                                                 }
@@ -561,7 +546,6 @@
                     amount:-99999,
                     date:'09/83/56',
                     Ename:'1',
-                    record:true,
                     details:'i put all my money on black',
                 
                 },
@@ -573,7 +557,6 @@
                     amount:-99,
                     date:'05/8555/5',
                     Ename:'2',
-                    record:true,
                     details:'i put all my money on black again',
             
                 },
@@ -585,7 +568,6 @@
                     amount:-25,
                     date:'09/83/56',
                     Ename:'3',
-                    record:true,
                     details:'i put all my money on black for the last time',
             
                 },
