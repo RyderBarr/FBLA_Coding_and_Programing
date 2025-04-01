@@ -523,6 +523,65 @@
 
     }
 
+// create transaction 
+    let transactionArray = []
+    function listTransaction( id=1, obj=database)
+    {
+        // clears transactionArray
+            transactionArray = []
+
+        // iterates through all the keys of the obj
+            Object.keys(obj).forEach( key => {
+
+                let user = obj[key] 
+
+                // a varible to check if the user is the correct user
+                    let isID = false
+
+                // iterates through the user data
+                    Object.keys(user).forEach( key => {
+
+                        let history = user[key]
+
+                        // gets to the users id and checks if this user is the user by id
+                            if(key == 'id' && user[key] == id)
+                            {
+
+                                isID = true
+
+                            }
+
+                        // if this is the ID 
+                            if(isID)
+                            {
+
+                                // and if we are in history
+                                if( key == 'history')
+                                {
+                                    
+                                    // iterates through history 
+                                        Object.keys(history).forEach( key => {
+
+                                            let transaction = history[key]
+                                                
+                                            transactionArray.push(transaction)
+
+                                        })
+                                    
+                                }
+
+                            }
+                        
+                    })
+
+                // resettes the id check 
+                    isID = false
+
+            })
+
+            console.log(transactionArray)
+    }
+
 // test data base 
     database = {
 
@@ -639,5 +698,5 @@
     // console.log(gotUserID)
 
     // 
-    deleteTransaction(database, id, userID)
+    listTransaction()
 
