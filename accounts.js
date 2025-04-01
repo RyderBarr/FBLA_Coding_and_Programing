@@ -524,11 +524,10 @@
     }
 
 // create transaction 
-    let transactionArray = []
     function listTransaction( id=1, obj=database)
     {
-        // clears transactionArray
-            transactionArray = []
+        // creates transactionArray
+            let transactionArray = []
 
         // iterates through all the keys of the obj
             Object.keys(obj).forEach( key => {
@@ -578,8 +577,7 @@
                     isID = false
 
             })
-
-            console.log(transactionArray)
+            return(transactionArray)
     }
 
 // test data base 
@@ -698,5 +696,5 @@
     // console.log(gotUserID)
 
     // 
-    listTransaction()
+    console.log(listTransaction())
 
