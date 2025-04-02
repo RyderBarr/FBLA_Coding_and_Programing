@@ -421,7 +421,7 @@
     }
 
 // create transaction 
-    function createTransaction( id=1, amount=100, date='9/11/01', Ename='attack', details='', obj=database)
+    function createTransaction( id=1, amount=100, date='56/99/01', Ename='lost money', details='', obj=database)
     {
         // iterates through all the keys of the obj
             Object.keys(obj).forEach( key => {
